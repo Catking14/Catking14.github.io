@@ -1,0 +1,31 @@
+html
+{
+    background-image: url(assets/849535.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+h1[id="MainTitle"]
+{
+    font-family: 'Caveat', cursive;
+    font-size: 6vw;
+    color: aliceblue;
+    text-align: start;
+    margin-left: 20%;
+    margin-right: 20%;
+    animation-name: fadeInDown;
+    animation-duration: 1.4s;
+    animation-timing-function: ease;
+}
+
+article
+{
+    box-sizing: border-box;
+    text-align: start;
+    margin-top: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: rgba(199, 255, 236, 0.2);
+    font-size: 2rem;
+}
