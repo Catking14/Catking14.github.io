@@ -4,37 +4,35 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Example 4-6</title>
 
-        <title>Example 2-3</title>
-
-        <link rel="stylesheet" type="text/css" href="default.css">
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
-
-            body
+            section > em
             {
-                font-family: 'Roboto Condensed', sans-serif;
-                background-color: aliceblue;
-                padding: 2em;
+                font-weight: bold;
             }
 
-            article
+            section em.extra
             {
-                background-color: antiquewhite;
-            }
-
-            p
-            {
+                color: white;
                 background-color: aquamarine;
             }
         </style>
     </head>
 
     <body>
-        <h1>this is the first level header.</h1>
         <article>
-            This is an article.
-            <p>This is a paragraph.</p>
+            <section><em class="extra">Cascading Style Sheets (CSS)</em> is a style sheet language used for describing the presentation of a 
+                document written in a markup language such as <em class="extra">HTML</em> or <em class="extra">XML</em> (including XML dialects such as SVG, MathML 
+                or XHTML).[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.[2]
+            </section>
+            <section>
+                CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts.[3] This separation 
+                can improve content accessibility; provide more flexibility and control in the specification of presentation characteristics; 
+                enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file, which <em class="extra">reduces complexity 
+                and repetition</em> in the structural content; and enable the .css file to be cached to improve the page load speed between the pages 
+                that share the file and its formatting.
+            </section>
         </article>
     </body>
 </html>

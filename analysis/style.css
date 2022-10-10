@@ -67,9 +67,20 @@ section
     margin: 1.2vh 0;
 }
 
+section > p
+{
+    text-indent: 5%;
+}
+
 p
 {
     margin: 0.2vh 0;
+}
+
+a, a:visited
+{
+    color: #323232;
+    text-decoration: underline;
 }
 
 nav
@@ -82,6 +93,21 @@ nav
     font-family: Poppins, sans-serif;
     font-size: 2vh;
     line-height: 3vh;
+}
+
+nav > a
+{
+    background-color: #323232;
+    color: white;
+    padding: 2px 4px;
+    text-decoration: none;
+    opacity: 0.6;
+}
+
+nav > a:visited
+{
+    color: white;
+    text-decoration: underline;
 }
 
 
