@@ -1,31 +1,62 @@
+/* fonts
+    font-family: 'Bungee Hairline', cursive;
+    font-family: 'Nunito', sans-serif;
+*/
+
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 html
 {
-    background-image: url(assets/849535.png);
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body
+{
+    min-height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    background-image: url(assets/587453.jpg);
     background-size: cover;
+    background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
 
-h1[id="MainTitle"]
+
+h1
 {
-    font-family: 'Caveat', cursive;
-    font-size: 6vw;
+    font-family: 'Bungee Hairline', cursive;
+    font-size: 60px;
     color: aliceblue;
-    text-align: start;
-    margin-left: 20%;
-    margin-right: 20%;
-    animation-name: fadeInDown;
-    animation-duration: 1.4s;
-    animation-timing-function: ease;
+    position: fixed;
+    text-align: center;
+    top: 25%;
+    width: 100%;
+    transform: translateY(-50%);
 }
 
-article
+a
 {
-    box-sizing: border-box;
-    text-align: start;
-    margin-top: 10%;
-    margin-left: 15%;
-    margin-right: 15%;
-    background-color: rgba(199, 255, 236, 0.2);
-    font-size: 2rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    color: rgb(44, 33, 11);
+    background-color: rgb(245, 213, 155);
+    position: fixed;
+    top: 75%;
+    left: 50%;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 80px;
+}
+
+a:hover
+{
+    background-color: rgb(243, 224, 190);
 }
