@@ -110,4 +110,9 @@ nav > a:visited
     text-decoration: underline;
 }
 
+nav > a:hover
+{
+    opacity: 1;
+}
+
 
