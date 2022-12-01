@@ -7,8 +7,57 @@
         <title>Expository Essay Analysis : Example</title>
 
         <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script src="interact.js"></script>
+        
+        <script>
+            function move_up()
+            {
+                let view_top = $(window).scrollTop();
+                let view_bottom = view_top + $(window).height();
+                let all_sections = $("section");
+                let last = all_sections.length - 1;
+
+                all_sections.each
+                (
+                    function(i)
+                    {
+                        let current_item = all_sections.eq(i);
+
+                        if(current_item.offset().top + current_item.height() + 100 > view_top && current_item.offset().top + current_item.height() < view_bottom && i != last)
+                        {
+                            current_item.css("top", 0);
+                        }
+                        else if(current_item.offset().top + current_item.height() > view_top && current_item.offset().top + current_item.height() - 1 < view_bottom)    // - 1 for offset
+                        {
+                            current_item.css("top", 0);
+                        }
+                        else
+                        {
+                            current_item.css("top", 100);
+                        }
+                    }
+                )
+            }
+            
+            window.onload = function()
+            {
+                move_up();
+
+                $(document).on("scroll", move_up);
+                $("nav > a:first-of-type").on("click", showHideMenuItems);
+                $(document).on("click", hideMenuItems);
+            }
+            
+        </script>
 
         <style>
+            section
+            {
+                position: relative;
+                top: 100px;
+            }
+
             span.joint
             {
                 color: #a6611a;
@@ -44,10 +93,7 @@
 
     <body>
         <nav>
-            <a>+</a>
-            <a href="index.html">Home</a>
-            <a href="example.html">Essay Example</a>
-            <a href="analysis.html">Structural Analysis</a>
+            <a><span style="display: inline-block;">+</span></a><a href="index.html">Home</a><a href="example.html">Essay Example</a><a href="analysis.html">Structural Analysis</a>
         </nav>
 
         <article>
@@ -66,33 +112,31 @@
                 <img src="../assets/ex1.jpg" style="max-width: 80vw;">
             </figure>
 
-            <h3>[Sec. #1]</h3>
-
             <section id="sec1">
-                    <p>
-                        MOSCOW — On a recent evening in Red Square, a corps of elite paratroopers dressed in camouflage 
-                        performed a battle~like dance with <span class="vocab"> pyrotechnics<span><b>"pyrotechnics"</b> - fireworks </span></span>. An Egyptian performer dressed as a pharaoh rode back 
-                        and forth in a chariot wielding an ankh, the ancient Egyptian symbol of life, as a band played "Katyusha," 
-                        a Soviet-era patriotic war song.
-                    </p>
+                <h3>[Sec. #1]</h3>
+                <p>
+                    MOSCOW — On a recent evening in Red Square, a corps of elite paratroopers dressed in camouflage 
+                    performed a battle~like dance with <span class="vocab"> pyrotechnics<span><b>"pyrotechnics"</b> - fireworks </span></span>. An Egyptian performer dressed as a pharaoh rode back 
+                    and forth in a chariot wielding an ankh, the ancient Egyptian symbol of life, as a band played "Katyusha," 
+                    a Soviet-era patriotic war song.
+                </p>
 
-                    <p>
-                        Nataliya Nikonova, 44, was one of thousands of spectators cheering from the bleachers at a festival celebrating 
-                        the militaries of Russia and friendly nations including Belarus, India and Venezuela.
-                        <span class="joint">►</span> "I was so thrilled that I just about lost my voice!" she said.
-                    </p>
+                <p>
+                    Nataliya Nikonova, 44, was one of thousands of spectators cheering from the bleachers at a festival celebrating 
+                    the militaries of Russia and friendly nations including Belarus, India and Venezuela.
+                    <span class="joint">►</span> "I was so thrilled that I just about lost my voice!" she said.
+                </p>
 
-                    <p>
-                        Russia's army is now waging a slow-moving war that has left tens of thousands dead and contributed to global 
-                        inflation and a surge in energy prices.
-                        <span class="joint">►</span> "Nothing has really changed," she said. "Sure, the prices went up, but we can endure that." She rushed off to 
-                        listen to an <span class="vocab">encore<span><b>"encore"</b> - an extra song or piece of music that is performed at the end of a show</span></span> of "Katyusha" from the Egyptian Military Symphonic Band.
-                    </p>
+                <p>
+                    Russia's army is now waging a slow-moving war that has left tens of thousands dead and contributed to global 
+                    inflation and a surge in energy prices.
+                    <span class="joint">►</span> "Nothing has really changed," she said. "Sure, the prices went up, but we can endure that." She rushed off to 
+                    listen to an <span class="vocab">encore<span><b>"encore"</b> - an extra song or piece of music that is performed at the end of a show</span></span> of "Katyusha" from the Egyptian Military Symphonic Band.
+                </p>
             </section>
 
-            <h3>[Sec. #2]</h3>
-
             <section id="sec2">
+                <h3>[Sec. #2]</h3>
                 <p>
                     Very little about day-to-day life seems to have changed in Moscow, where people have the financial resources to weather significant 
                     price increases, unlike much of the rest of the country. GUM, the luxury mall next to Red Square, is full of shoppers — though many Western 
@@ -117,10 +161,9 @@
                     Sciences, describing a coping mechanism that dates from the Soviet period but became widespread during Mr.Putin's tenure.
                 </p>
             </section>
-            
-            <h3>[Sec. #3]</h3>
 
             <section id="sec3">
+                <h3>[Sec. #3]</h3>
                 <p>
                     "This is the thing that they always prioritize and that they excel at," he said of Russia's leadership, "and they are doing that now with a considerable degree of 
                     success, I would say."
@@ -142,10 +185,9 @@
                     <span class="joint">►</span> She said she went to a protest and signed an antiwar <span class="vocab">petition<span><b>"petition"</b> - asking for some action from the government or another authority</span></span>, and several days later, she was invited to invited to resign from her job at a public institution.
                 </p>
             </section>
-            
-            <h3>[Sec. #4]</h3>
 
             <section id="sec4">
+                <h3>[Sec. #4]</h3>
                 <p>
                     For many years, Mr.Putin has been cracking down on <span class="vocab">dissent<span><b>"dissent"</b> - opposive opinion</span></span> and protesters, but today it is almost impossible to express disenchantment with the system, and people expressing 
                     their views do so with the knowledge that a new law punishes criticism of the war. Almost 16,500 people have been arrested on charges of protesting the aggression in Ukraine since 
@@ -177,9 +219,8 @@
                 </p>
             </section>
             
-            <h3>[Sec. #5]</h3>
-            
             <section id="sec5">
+                <h3>[Sec. #5]</h3>
                 <p>
                     Others said that seeing the weapons on display at the army festival — including Kinzhal missiles being used in Ukraine — made them feel as if they had come from a strong country.
                 </p>
@@ -208,10 +249,9 @@
                     who promised he wouldn't leave Russia as many other artists had. The crowd went wild.
                 </p>
             </section>
-            
-            <h3>[Sec. #6]</h3>
 
             <section id="sec6">
+                <h3>[Sec. #6]</h3>
                 <p>
                     "At first I was thinking to myself, wow, there is a war 400 kilometers away, and we are at a music festival," said Ivan, a 25-year-old who had just returned to his native Russia after several years abroad.
                     <span class="joint">►</span> He loosened up eventually.
