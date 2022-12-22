@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Catking14 的小屋 | 照片</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&family=Nunito&display=swap" rel="stylesheet">
+        <!-- fonts above-->
+        <link rel="stylesheet" type="text/css" href="../../style.css">
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script src="../../interact.js"></script>
+
+        <script>
+            var cur_pic = 0;
+            var max_pic = 12;
+
+            function show_cur_pic()
+            {
+                let pics = $("figure.display_box > img");
+
+                cur_pic = $(this).index();
+
+                for(let i = 0;i < max_pic;i++)
+                {
+                    if(i === cur_pic)
+                    {
+                        console.log("y");
+                        pics.eq(i).css("opacity", 1);
+                    }
+                    else
+                    {
+                        pics.eq(i).css("opacity", 0);
+                    }
+                }
+            }
+
+            window.onload = function()
+            {
+                scroll_effect();
+
+                $(document).on("scroll", scroll_effect);
+                $("figure.gallery > img").on("click", show_cur_pic);
+            }
+        </script>
+
+        <style>
+            h1
+            {
+                position: absolute; 
+                bottom: 5vh; 
+                left: 5vw; 
+                font-size: 5vw; 
+                font-family: 'Nunito', sans-serif; 
+                line-height: 8vw; 
+                padding: 0 2vw;
+                color: white; 
+                background-color: rgba(0, 0, 0, 0.6);
+                border-radius: 20px;
+            }
+
+            article
+            {
+                font-family: 'Noto Sans TC', sans-serif;
+            }
+
+            figure.gallery
+            {
+                width: 16vw;
+                margin-left: 5vw;
+            }
+
+            figure.gallery > img
+            {
+                width: 5vw;
+                height: 5vw;
+                opacity: 0.1;
+                transition: opacity 0.3s ease-in-out;
+            }
+
+            figure.gallery > img:hover
+            {
+                opacity: 1;
+                transition: opacity 0.3s ease-in-out;
+                cursor: pointer;
+            }
+
+            figure.display_box
+            {
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                top: 0;
+                left: 22vw;
+                width: 66vw;
+                height: 75vh;
+            }
+
+            figure.display_box > img
+            {
+                position: absolute;
+                max-width: 100%;
+                max-height: 80%;
+                overflow: hidden;
+                transition: opacity 0.3s ease-in-out;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <nav>
+            <!-- from right to left!! -->
+            <ul>
+                <li><a href="../../eng/portfolio/photos.html" style="font-family: 'Nunito', sans-serif; cursor: pointer;"><b>Eng</b></a></li>
+
+                <li>
+                    <a><b>作品集</b></a>
+                    <ul>
+                        <li><a href="artworks.html">藝術作品</a></li>
+                        <li><a href="photos.html">照片</a></li>
+                        <li><a href="codes.html">程式</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a><b>關於我</b></a>
+                    <ul>
+                        <li><a href="../about/introduction.html">自我介紹</a></li>
+                        <li><a href="../about/experience.html">經歷</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="../index.html" id="home">⌂</a></li>
+            </ul>
+        </nav>
+
+        <div class="moveup">
+            <figure style="position: relative; margin: 0; width: 100vw; max-height: 100vh; overflow: hidden;">
+                <img src="../../../assets/IMG_0950.jpg" style="top: 0; max-width: 100vw; opacity: 0.8;">
+                <h1>Photography</h1>
+            </figure>
+        </div>
+
+        <article>
+            <section>
+                <div class="moveup">
+                    <p>
+                        <b style="line-height: 5vh; font-size: 4vw;">攝影</b>是這個時代人人都在做的事情，因為智慧型手機的普及和進步，手機上面的相機越來越厲害，現在要拍出好看的照片似乎只要有好看的景象
+                        ，按下手機的拍照鈕便有一張好看的照片，甚至是星空、銀河和慢動作這類以往需要大筆錢財去買專業器材才能拍出的照片，現在藉由厲害的內建
+                        演算法運算，手機也能夠輕鬆拍出，紀錄生活及剎那的景象是那麼的輕而易舉。
+                    </p>
+                </div>
+
+                <div class="moveup">
+                    <p>
+                        然而，在這個智慧型手機當道且極為方便的時代，還是有一群人，願意背著數公斤重的器材，願意花時間去手動衣衣的設定參數，願意花大筆的錢財去購入
+                        昂貴的鏡頭，就為了拍下一張照片。我在前些日子仍然對這些行為感到不解，甚至對當時的我來說，也不太注重拍照這件事，想說紀錄生活只要有美好的回憶
+                        就已足夠，不追求用照片分享生活動態吸引他人目光，好像不是很需要拍照。
+                    </p>
+                </div>
+
+                <div class="moveup">
+                    <p>
+                        然而，正是這群在這年代還願意"遵循古法"的人撼動了我的想法。<br><br>
+                    </p>
+                </div>
+            </section>
+        </article>
+            
+        <div class="moveup" style="top: 300px;">
+            <img src="../../../assets/links.jpeg" style="max-width: 100vw;">
+            <h5 style="font-family: 'Nunito'; font-size: 1vw;">From: <a href="https://www.linksphotograph.com/" target="_blank" style="color: burlywood;">Links Photograph</a></h5>
+        </div>
+
+        <article>
+            <section>
+                <div class="moveup">
+                    <p>
+                        現代相機的數位成象主要是透過鏡頭將影像投射在感光元件上，感光元件再將訊號處理成數位格式呈現出我們所見的數位照片。而在這之中，感光元件代表了你有多少與光
+                        有關的訊號能夠被吸收與處理，隨著現代手機演算法的進步，在訊號的處理上憑藉著高效能的CPU與AI技術加持，其實表現得會比一般相機要好，但為何到目前終究有些照片
+                        是手機無法呈現出來的?原因就是在感光元件身上。
+                    </p>
+                </div>
+
+                <div class="moveup">
+                    <p>
+                        現代相機的感光元件格式常見的有1吋、M4/3、APS-C、還有FF(全片幅)，這些格式代表了感光元件的大小，越大的感光元件代表著更充足的進光量，更豐富的資訊能被接收到
+                        在硬體上也就有著更大的天花板，雖然一張照片好不好看和這些格式無關，但它在硬體上的優勢注定了有些資訊與表現只有夠大的感光元件才能完美呈現。而這些"天花板"級
+                        的照片，正是相機能夠被保留的一大因素，因為這是目前大部分手機還未能取代的。
+                    </p>
+                </div>
+
+                <div class="moveup">
+                    <p>
+                        但其實不論相機的等級如何，攝影終究的目的，還是為了留下那瞬間的影像，不論是稍縱即逝的美好，還是烽火遍地間的剎那，每張照片都代表著一段故事。這是我在尋找
+                        更進一階的照片時才恍然發現的，最厲害的照片肯定是不好得到，究竟攝影還是一門光的藝術，但在拍了許許多多照片後再回頭一看，才知道照片最吸引人的還是那段背後的故事
+                        ，我依然不追求用照片來吸引眾人目光，但是，記憶力終究有限，我們能夠如何保存那只有一次的時光中的回憶，我找到的方式，就是這剎那的瞬間。
+                    </p>
+                </div>
+
+                <div class="moveup">
+                    <p>
+                        於是，我開始記錄生活。
+                    </p>
+                </div>
+            </section>
+
+            <div class="moveup" style="position: relative;">
+                <figure class="gallery">
+                    <img src="../../../assets/img1.webp">
+                    <img src="../../../assets/img3.webp">
+                    <img src="../../../assets/img4.webp">
+                    <img src="../../../assets/img5.webp">
+                    <img src="../../../assets/img6.webp">
+                    <img src="../../../assets/img7.webp">
+                    <img src="../../../assets/img8.webp">
+                    <img src="../../../assets/img9.webp">
+                    <img src="../../../assets/img10.webp">
+                    <img src="../../../assets/img11.webp">
+                    <img src="../../../assets/img12.webp">
+                    <img src="../../../assets/img13.webp">
+                </figure>
+
+                <figure class="display_box">
+                    <img src="../../../assets/img1.webp" style="opacity: 1;">
+                    <img src="../../../assets/img3.webp" style="opacity: 0;">
+                    <img src="../../../assets/img4.webp" style="opacity: 0;">
+                    <img src="../../../assets/img5.webp" style="opacity: 0;">
+                    <img src="../../../assets/img6.webp" style="opacity: 0;">
+                    <img src="../../../assets/img7.webp" style="opacity: 0;">
+                    <img src="../../../assets/img8.webp" style="opacity: 0;">
+                    <img src="../../../assets/img9.webp" style="opacity: 0;">
+                    <img src="../../../assets/img10.webp" style="opacity: 0;">
+                    <img src="../../../assets/img11.webp" style="opacity: 0;">
+                    <img src="../../../assets/img12.webp" style="opacity: 0;">
+                    <img src="../../../assets/img13.webp" style="opacity: 0;">
+                </figure>
+            </div>
+
+            <p>
+                <!-- just for cleaner view -->
+            </p>
+        </article>
+
+    </body>
+</html>

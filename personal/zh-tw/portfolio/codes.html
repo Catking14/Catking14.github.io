@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Catking14 的小屋 | 程式</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&family=Nunito&display=swap" rel="stylesheet">
+        <!-- fonts above-->
+        <link rel="stylesheet" type="text/css" href="../../style.css">
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script src="../../interact.js"></script>
+
+        <script>
+            window.onload = function()
+            {
+                scroll_effect();
+
+                $(document).on("scroll", scroll_effect);
+            }
+        </script>
+
+        <style>
+            h1
+            {
+                position: absolute; 
+                bottom: 5vh; 
+                left: 5vw; 
+                font-size: 5vw; 
+                font-family: 'Nunito', sans-serif; 
+                line-height: 8vw; 
+                padding: 0 2vw;
+                color: white; 
+                background-color: rgba(0, 0, 0, 0.6);
+                border-radius: 20px;
+            }
+
+            article
+            {
+                font-family: 'Noto Sans TC', sans-serif;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav>
+            <!-- from right to left!! -->
+            <ul>
+                <li><a href="../../eng/portfolio/codes.html" style="font-family: 'Nunito', sans-serif; cursor: pointer;"><b>Eng</b></a></li>
+
+                <li>
+                    <a><b>作品集</b></a>
+                    <ul>
+                        <li><a href="artworks.html">藝術作品</a></li>
+                        <li><a href="photos.html">照片</a></li>
+                        <li><a href="codes.html">程式</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a><b>關於我</b></a>
+                    <ul>
+                        <li><a href="../about/introduction.html">自我介紹</a></li>
+                        <li><a href="../about/experience.html">經歷</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="../index.html" id="home">⌂</a></li>
+            </ul>
+        </nav>
+
+        <div class="moveup">
+            <figure style="position: relative; margin: 0; height: auto;">
+                <img src="" style="top: 0; min-width: 100%; min-height: 100%; opacity: 0.8;">
+                <h1>Codes</h1>
+            </figure>
+        </div>
+
+        <article>
+            <section>
+                
+            </section>
+        </article>
+            
+    </body>
+</html>

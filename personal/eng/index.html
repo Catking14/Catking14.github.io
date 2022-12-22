@@ -10,11 +10,14 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&family=Nunito&display=swap" rel="stylesheet">
         <!-- fonts above-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-        <!-- animations above-->
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
 
         <style>
+            html
+            {
+                background-color: rgb(31, 31, 31);
+            }
+
             h1
             {
                 font-family: 'Nunito', sans-serif;
@@ -68,6 +71,12 @@
                 background-image: url(../../assets/882864.png);
                 background-attachment: fixed;
                 background-size: cover;
+                animation: HomepageEmerge 0.9s ease-in;
+            }
+
+            div
+            {
+                animation: ItemEmerge 1.5s ease-in-out;
             }
 
             nav
@@ -93,34 +102,36 @@
     </head>
 
     <body>
-        <nav>
-            <!-- from right to left!! -->
-            <ul>
-                <li><a href="../zh-tw/index.html" style="font-family: 'Noto Sans TC', sans-serif; cursor: pointer;"><b>中</b></a></li>
-
-                <li>
-                    <a><b>Portfolio</b></a>
-                    <ul>
-                        <li><a href="">Artworks</a></li>
-                        <li><a href="">Photographs</a></li>
-                        <li><a href="">Codes</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a><b>About</b></a>
-                    <ul>
-                        <li><a href="about/introduction.html">Introduction</a></li>
-                        <li><a href="">Experiences</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-
-        <h1>Welcome to my cabin</h1>
-        <h3>Look around!</h3>
-
-        <h5>From: <a href="https://www.pixiv.net/users/2600911" target="_blank"><em>NEKO♨ リコリコ大好き</em></a></h5>
+        <div>
+            <nav>
+                <!-- from right to left!! -->
+                <ul>
+                    <li><a href="../zh-tw/index.html" style="font-family: 'Noto Sans TC', sans-serif; cursor: pointer;"><b>中</b></a></li>
+    
+                    <li>
+                        <a><b>Portfolio</b></a>
+                        <ul>
+                            <li><a href="">Artworks</a></li>
+                            <li><a href="">Photographs</a></li>
+                            <li><a href="">Codes</a></li>
+                        </ul>
+                    </li>
+    
+                    <li>
+                        <a><b>About</b></a>
+                        <ul>
+                            <li><a href="about/introduction.html">Introduction</a></li>
+                            <li><a href="">Experiences</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+    
+            <h1>Welcome to my cabin</h1>
+            <h3>Look around!</h3>
+    
+            <h5>From: <a href="https://www.pixiv.net/users/2600911" target="_blank"><em>NEKO♨ リコリコ大好き</em></a></h5>
+        </div>
     </body>
 </html>
 

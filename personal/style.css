@@ -21,7 +21,8 @@ body
     min-height: 100%;
     width: 100%;
     overflow-x: hidden;
-    background-color: #F5EFE6;
+    background-color: #fdfdfd;
+    padding-bottom: 10vh;
 }
 
 /* nav stuff */
@@ -32,7 +33,6 @@ nav
     line-height: 6vh;
     width: 100%;
     background-color: #AEBDCA;
-    opacity: 0.8;
     text-align: end;
     z-index: 999;
 }
@@ -57,6 +57,7 @@ nav > ul a
     text-decoration: none;
     padding: 1vh 2vw;
     color: aliceblue;
+    transition: background-color 0.3s ease-out;
 }
 
 nav > ul > li > ul a:hover
@@ -67,6 +68,7 @@ nav > ul > li > ul a:hover
 nav > ul > li:first-child > a:hover
 {
     background-color: #8c9faf;
+    transition: background-color 0.3s ease-out;
 }
 
 nav > ul > li > a
@@ -74,21 +76,18 @@ nav > ul > li > a
     cursor: default;
 }
 
-nav > ul > li > ul > li > a:hover
+nav > ul > li > ul:hover a
 {
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     border-top-right-radius: 16px;
-}
-
-nav > ul > li > a:hover + ul
-{
-    display: inline-block;
+    height: 8vh;
+    padding: 1vh 2vw;
 }
 
 nav > ul > li > ul
 {
-    display: none;
+    display: inline-block;
     list-style: none;
     font-family: 'Noto Sans TC', sans-serif;
     font-size: 2vh;
@@ -103,9 +102,19 @@ nav > ul > li > ul
     min-width: 150%;
 }
 
-nav > ul > li > ul:hover
+nav > ul > li > ul a
 {
-    display: inline-block;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-out;
+}
+
+nav > ul > li > a:hover + ul a
+{
+    height: 8vh;
+    padding: 1vh 2vw;
+    transition: all 0.4s ease-out;
 }
 
 #home
@@ -127,14 +136,14 @@ nav > ul > li > ul:hover
 /* article things */
 article
 {
-    font-family: 'Noto Sans TC', sans-serif;
+    /* font-family: 'Noto Sans TC', sans-serif; */
     margin: 2vh 6vw;
 }
 
 article:first-of-type
 {
-    position: absolute;
-    top: 10vh;
+    position: relative;
+    top: 8vh;
 }
 
 section
@@ -147,5 +156,43 @@ p
     font-size: 2vw;
     color: #1d1c1c;
     margin: 10vh 0;
-    text-indent: 5vw;
+}
+
+div.moveup
+{
+    position: relative;
+    top: 120px;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes HomepageEmerge
+{
+    0%
+    {
+        opacity: 0;
+    }
+
+    100%
+    {
+        opacity: 1;
+    }
+}
+
+@keyframes ItemEmerge
+{
+    0%
+    {
+        opacity: 0;
+    }
+
+    50%
+    {
+        opacity: 0;
+    }
+
+    100%
+    {
+        opacity: 1;
+    }
 }

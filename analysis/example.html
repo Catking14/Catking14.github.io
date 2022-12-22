@@ -24,13 +24,13 @@
                     {
                         let current_item = all_sections.eq(i);
 
-                        if(current_item.offset().top + current_item.height() + 100 > view_top && current_item.offset().top + current_item.height() < view_bottom && i != last)
+                        if(current_item.offset().top + 100 + 100 > view_top && current_item.offset().top + 100 < view_bottom && i != last)
                         {
-                            current_item.css("top", 0);
+                            current_item.animate({top: "0", opacity: "1"}, 500);
                         }
-                        else if(current_item.offset().top + current_item.height() > view_top && current_item.offset().top + current_item.height() - 1 < view_bottom)    // - 1 for offset
+                        else if(current_item.offset().top + 100 > view_top && current_item.offset().top + 100 - 1 < view_bottom)    // - 1 for offset
                         {
-                            current_item.css("top", 0);
+                            current_item.animate({top: "0", opacity: "1"}, 500);
                         }
                         /* else
                         {
@@ -57,6 +57,7 @@
             {
                 position: relative;
                 top: 100px;
+                opacity: 0;
             }
 
             span.joint
