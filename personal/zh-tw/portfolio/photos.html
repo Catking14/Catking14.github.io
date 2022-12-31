@@ -28,7 +28,6 @@
                 {
                     if(i === cur_pic)
                     {
-                        console.log("y");
                         pics.eq(i).css("opacity", 1);
                     }
                     else
@@ -43,6 +42,7 @@
                 scroll_effect();
 
                 $(document).on("scroll", scroll_effect);
+                $(document).on("scroll", nav_effect);
                 $("figure.gallery > img").on("click", show_cur_pic);
             }
         </script>
@@ -54,17 +54,11 @@
                 bottom: 5vh; 
                 left: 5vw; 
                 font-size: 5vw; 
-                font-family: 'Nunito', sans-serif; 
                 line-height: 8vw; 
                 padding: 0 2vw;
                 color: white; 
                 background-color: rgba(0, 0, 0, 0.6);
                 border-radius: 20px;
-            }
-
-            article
-            {
-                font-family: 'Noto Sans TC', sans-serif;
             }
 
             figure.gallery
@@ -78,6 +72,7 @@
                 width: 5vw;
                 height: 5vw;
                 opacity: 0.1;
+                border-radius: 10px;
                 transition: opacity 0.3s ease-in-out;
             }
 
@@ -96,14 +91,14 @@
                 top: 0;
                 left: 22vw;
                 width: 66vw;
-                height: 75vh;
+                height: 100%;
             }
 
             figure.display_box > img
             {
                 position: absolute;
                 max-width: 100%;
-                max-height: 80%;
+                max-height: 100%;
                 overflow: hidden;
                 transition: opacity 0.3s ease-in-out;
             }
@@ -157,7 +152,7 @@
 
                 <div class="moveup">
                     <p>
-                        然而，在這個智慧型手機當道且極為方便的時代，還是有一群人，願意背著數公斤重的器材，願意花時間去手動衣衣的設定參數，願意花大筆的錢財去購入
+                        然而，在這個智慧型手機當道且極為方便的時代，還是有一群人，願意背著數公斤重的器材，願意花時間去手動一一的設定參數，願意花大筆的錢財去購入
                         昂貴的鏡頭，就為了拍下一張照片。我在前些日子仍然對這些行為感到不解，甚至對當時的我來說，也不太注重拍照這件事，想說紀錄生活只要有美好的回憶
                         就已足夠，不追求用照片分享生活動態吸引他人目光，好像不是很需要拍照。
                     </p>
@@ -189,7 +184,7 @@
                 <div class="moveup">
                     <p>
                         現代相機的感光元件格式常見的有1吋、M4/3、APS-C、還有FF(全片幅)，這些格式代表了感光元件的大小，越大的感光元件代表著更充足的進光量，更豐富的資訊能被接收到
-                        在硬體上也就有著更大的天花板，雖然一張照片好不好看和這些格式無關，但它在硬體上的優勢注定了有些資訊與表現只有夠大的感光元件才能完美呈現。而這些"天花板"級
+                        在硬體上也就有著更高的天花板，雖然一張照片好不好看和這些格式無關，但它在硬體上的優勢注定了有些資訊與表現只有夠大的感光元件才能完美呈現。而這些"天花板"級
                         的照片，正是相機能夠被保留的一大因素，因為這是目前大部分手機還未能取代的。
                     </p>
                 </div>
@@ -209,7 +204,7 @@
                 </div>
             </section>
 
-            <div class="moveup" style="position: relative;">
+            <div class="moveup" style="position: relative; height: 42vw;;">
                 <figure class="gallery">
                     <img src="../../../assets/img1.webp">
                     <img src="../../../assets/img3.webp">
@@ -240,10 +235,6 @@
                     <img src="../../../assets/img13.webp" style="opacity: 0;">
                 </figure>
             </div>
-
-            <p>
-                <!-- just for cleaner view -->
-            </p>
         </article>
 
     </body>

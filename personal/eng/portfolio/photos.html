@@ -28,7 +28,6 @@
                 {
                     if(i === cur_pic)
                     {
-                        console.log("y");
                         pics.eq(i).css("opacity", 1);
                     }
                     else
@@ -43,6 +42,7 @@
                 scroll_effect();
 
                 $(document).on("scroll", scroll_effect);
+                $(document).on("scroll", nav_effect);
                 $("figure.gallery > img").on("click", show_cur_pic);
             }
         </script>
@@ -53,18 +53,12 @@
                 position: absolute; 
                 bottom: 5vh; 
                 left: 5vw; 
-                font-size: 5vw; 
-                font-family: 'Nunito', sans-serif; 
+                font-size: 5vw;  
                 line-height: 8vw; 
                 padding: 0 2vw;
                 color: white; 
                 background-color: rgba(0, 0, 0, 0.6);
                 border-radius: 20px;
-            }
-
-            article
-            {
-                font-family: 'Nunito', sans-serif;
             }
 
             figure.gallery
@@ -78,6 +72,7 @@
                 width: 5vw;
                 height: 5vw;
                 opacity: 0.1;
+                border-radius: 10px;
                 transition: opacity 0.3s ease-in-out;
             }
 
@@ -96,14 +91,14 @@
                 top: 0;
                 left: 22vw;
                 width: 66vw;
-                height: 75vh;
+                height: 100%;
             }
 
             figure.display_box > img
             {
                 position: absolute;
                 max-width: 100%;
-                max-height: 80%;
+                max-height: 100%;
                 overflow: hidden;
                 transition: opacity 0.3s ease-in-out;
             }
@@ -166,7 +161,7 @@
 
                 <div class="moveup">
                     <p>
-                        However, it was these people who are still willing to use the "old-fashion way" in this days changed my mind.<br><br>
+                        However, it was these people who are still willing to use the "old-fashion way" in these days changed my mind.<br><br>
                     </p>
                 </div>
             </section>
@@ -212,7 +207,7 @@
                 </div>
             </section>
 
-            <div class="moveup" style="position: relative;">
+            <div class="moveup" style="position: relative; height: 42vw;">
                 <figure class="gallery">
                     <img src="../../../assets/img1.webp">
                     <img src="../../../assets/img3.webp">
@@ -243,10 +238,6 @@
                     <img src="../../../assets/img13.webp" style="opacity: 0;">
                 </figure>
             </div>
-
-            <p>
-                <!-- just for cleaner view -->
-            </p>
         </article>
 
     </body>

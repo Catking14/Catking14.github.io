@@ -14,19 +14,56 @@
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
         <script src="../../interact.js"></script>
 
-        <script>
-            window.onload = function()
-            {
-                scroll_effect();
-
-                $(document).on("scroll", scroll_effect);
-            }
-        </script>
-
         <style>
-            article
+            div#line
             {
-                font-family: 'Nunito', sans-serif;
+                position: absolute;
+                left: 50%;
+                margin: 0 auto;
+                height: 105%;
+                width: 0;
+                border-left: 0.3vw solid #98beff;
+            }
+
+            span.dot
+            {
+                display: inline-block;
+                position: absolute;
+                left: 50%;
+                height: 2vw;
+                width: 2vw;
+                background-color: #98beff;
+                border-radius: 50%;
+                transform: translate(-0.85vw, 0);
+            }
+
+            h1
+            {
+                margin-right: 55%;
+                font-size: 2.2vw;
+                color: #3399ff;
+                text-align: right;
+            }
+
+            p
+            {
+                width: 45%;
+            }
+
+            div:nth-of-type(even) > p
+            {
+                margin-right: 55%;
+                text-align: right;
+            }
+
+            div:nth-of-type(odd) > p
+            {
+                margin-left: 55%;
+            }
+
+            p > img
+            {
+                max-width: 100%;
             }
         </style>
 
@@ -36,7 +73,7 @@
         <nav>
             <!-- from right to left!! -->
             <ul>
-                <li><a href="../../zh-tw/about/introduction.html" style="font-family: 'Noto Sans TC', sans-serif; cursor: pointer;"><b>中</b></a></li>
+                <li><a href="../../zh-tw/about/experience.html" style="font-family: 'Noto Sans TC', sans-serif; cursor: pointer;"><b>中</b></a></li>
 
                 <li>
                     <a><b>Portfolio</b></a>
@@ -59,7 +96,67 @@
             </ul>
         </nav>
 
+        <article style="margin-top: 10vh;">
+            <div id="line" class="moveup"></div>
 
+            <div class="moveup">
+                <span class="dot"></span>
+                <h1>2018</h1>
+                
+                <p>
+                    <b>Asteroid Search Campaign</b><br>
+                    Participated in the International Asteroid Search Campaign to analyze astronomical photos, and successfully reported several unknown celestial bodies to NASA for observation and confirmation.
+
+                    <img src="../../../assets/astroid.jpg">
+                </p>
+            </div>
+
+            <div class="moveup">
+                <span class="dot"></span>
+                <h1>2019</h1>
+
+                <p>
+                    <b>Visionary Project</b><br>
+                    Participated in the high school student's vision project and in charge of making test site in the group. Our topic of the year was smart shopping cart. Designed to retrive the goods in the test site and reached the exit automatically.
+
+                    <img src="../../../assets/場地簡圖.jpg" alt="">
+                </p>
+            </div>
+
+            <div class="moveup">
+                <p>
+                    <span class="dot"></span>
+                    <b>Youth Travel In Taiwan</b><br>
+                    Selected to participate in the Ministry of Education's youth travel plan. The goal of the project is to understand the feature or history of local through traveling more than ten days. We chose to go to Kinmen to explore the scenery of the battlefield and the skills of making cannonballs into knives at then.
+    
+                    <img src="../../../assets/trip.jpg" alt="">
+                </p>
+            </div>
+
+            <div class="moveup">
+                <span class="dot"></span>
+                <h1>2020</h1>
+
+                <p>
+                    <b>Tsing Hua Cup Chemistry Competition</b><br>
+                    I went to participate in the Tsing Hua Cup Chemistry Competition. Although the result was not good, it affected my decision about university.
+
+                    <img src="../../../assets/chemical.png" alt="">
+                </p>
+            </div>
+
+            <div class="moveup">
+                <span class="dot"></span>
+                <h1>2022</h1>
+
+                <p>
+                    <b>Competitive Programming Beginner Contest</b><br>
+                    It was the first time I tried the competitive programming. In this contest, I 've experienced how to clarify our ideas within a limited time, then communicate and cooperate with team members to solve the problems. This experience improved my ability to solve programming problems.
+
+                    <img src="../../../assets/contest.jpg" alt="">
+                </p>
+            </div>
+        </article>
     </body>
 </html>
 

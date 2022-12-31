@@ -14,19 +14,56 @@
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
         <script src="../../interact.js"></script>
 
-        <script>
-            window.onload = function()
-            {
-                scroll_effect();
-
-                $(document).on("scroll", scroll_effect);
-            }
-        </script>
-
         <style>
-            article
+            div#line
             {
-                font-family: 'Noto Sans TC', sans-serif;
+                position: absolute;
+                left: 50%;
+                margin: 0 auto;
+                height: 105%;
+                width: 0;
+                border-left: 0.3vw solid #98beff;
+            }
+
+            span.dot
+            {
+                display: inline-block;
+                position: absolute;
+                left: 50%;
+                height: 2vw;
+                width: 2vw;
+                background-color: #98beff;
+                border-radius: 50%;
+                transform: translate(-0.85vw, 0);
+            }
+
+            h1
+            {
+                margin-right: 55%;
+                font-size: 2.2vw;
+                color: #3399ff;
+                text-align: right;
+            }
+
+            p
+            {
+                width: 45%;
+            }
+
+            div:nth-of-type(even) > p
+            {
+                margin-right: 55%;
+                text-align: right;
+            }
+
+            div:nth-of-type(odd) > p
+            {
+                margin-left: 55%;
+            }
+
+            p > img
+            {
+                max-width: 100%;
             }
         </style>
     </head>
@@ -58,8 +95,66 @@
             </ul>
         </nav>
 
-        <article>
-            
+        <article style="margin-top: 10vh;">
+            <div id="line" class="moveup"></div>
+
+            <div class="moveup">
+                <span class="dot"></span>
+                <h1>2018</h1>
+                
+                <p>
+                    <b>小行星搜尋活動</b><br>
+                    參與了分析天文照片比對的國際小行星搜尋活動，成功回報數個未知天體給NASA進行觀察確認
+
+                    <img src="../../../assets/astroid.jpg">
+                </p>
+            </div>
+
+            <div class="moveup">
+                <span class="dot"></span>
+                <h1>2019</h1>
+
+                <p>
+                    <b>高瞻計畫</b><br>
+                    參與了高中生高瞻計畫，負責在小組中製作測試場地，當年的主題為智慧購物車，在模擬的場地之中自行取得商品並抵達出口
+
+                    <img src="../../../assets/場地簡圖.jpg" alt="">
+                </p>
+            </div>
+
+            <div class="moveup">
+                <p>
+                    <span class="dot"></span>
+                    <b>尋找感動地圖計畫</b><br>
+                    獲選參加教育部尋找感動地圖青年壯遊計畫，計畫的目標是透過十天以上的實地探訪去了解一個地方的主題或背景歷史，當初選擇的是去金門探索戰地風光及砲彈鋼刀技藝
+    
+                    <img src="../../../assets/trip.jpg" alt="">
+                </p>
+            </div>
+
+            <div class="moveup">
+                <span class="dot"></span>
+                <h1>2020</h1>
+
+                <p>
+                    <b>清華盃化學競賽</b><br>
+                    前往參加清華盃化學競賽初試啼聲，雖然結果不好，但也間接影響了我大學道路的選擇
+
+                    <img src="../../../assets/chemical.png" alt="">
+                </p>
+            </div>
+
+            <div class="moveup">
+                <span class="dot"></span>
+                <h1>2022</h1>
+
+                <p>
+                    <b>校內競程體驗賽</b><br>
+                    首次嘗試了競程的比賽，去了解如何在有限的時間之內釐清自己的解題思路，並與團隊溝通合作，增進自己的解題能力
+
+                    <img src="../../../assets/contest.jpg" alt="">
+                </p>
+            </div>
         </article>
             
     </body>
