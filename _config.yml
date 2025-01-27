@@ -60,10 +60,19 @@ prismjs:
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
-index_generator:
+# index2 generator是否包含官方的hexo-generator-index，默认true（包含）
+index2_include_index: true
+
+# index 2 generator settings
+## https://github.com/Jamling/hexo-generator-index2/blob/master/README_zh.md
+index2_generator:
   path: ''
+  index: true
   per_page: 10
   order_by: -date
+  # exclude:
+  #   - category journals
+
 
 # Category & Tag
 default_category: uncategorized
@@ -99,9 +108,39 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: Anatolo
 
+# Image carousel and zoom
+splide:
+  cdn: unpkg  # Options: unpkg, cdnjs, jsdelivr
+  options:
+    height: 600           # Height
+    # heightRatio: 0.618        # Aspect ratio
+    lazyLoad: 'nearby'        # Lazy loading, options: false, 'nearby', 'sequential'
+    type: 'slide'             # Type, options: 'loop', 'slide'
+    autoplay: false           # Autoplay
+    interval: 3000            # Autoplay interval in milliseconds
+    pauseOnHover: true        # Pause autoplay when hovering
+
+  styles:
+    arrowColor: '#fc8d5d'             # Arrow color for navigation buttons
+    arrowHoverColor: '#fc6423'        # Arrow color on hover
+    paginationColor: '#fc8d5d'        # Pagination button color when inactive
+    paginationActiveColor: '#fc6423'  # Pagination button color when active
+    paginationHoverColor: '#fc6423'   # Pagination button color on hover
+    borderRadius: 1px                 # Border radius
+    borderColor:
+      light: "#eee"  # Border color for light theme
+      dark: "#444"   # Border color for dark theme
+    shadowColor:
+      light: "rgba(0, 0, 0, 0.1)"  # Shadow color for light theme
+      dark: "rgba(0, 0, 0, 0.3)"   # Shadow color for dark theme
+
+  dark_mode: auto  # Dark mode, options: auto, true, false. auto will follow the theme of the browser.
+  enable_medium_zoom: false  # Enable medium zoom, do not enable together with the theme's medium zoom option
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
   repo: git@github.com:Catking14/Catking14.github.io.git
-  branch: master
+  branch: gh-pages
+  # message: 'First Publish'

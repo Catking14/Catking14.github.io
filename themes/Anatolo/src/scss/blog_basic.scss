@@ -129,6 +129,12 @@ p {
   font-size: 15px;
 }
 
+p img {
+  display: block;
+  max-height: 680px;
+  margin: 0 auto;
+}
+
 a {
   text-decoration: none;
 }
