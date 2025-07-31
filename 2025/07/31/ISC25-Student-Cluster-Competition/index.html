@@ -1,0 +1,389 @@
+<!DOCTYPE html><html lang="zh-TW" theme="default"><head><!-- hexo injector head_begin start -->
+      <link href="https://unpkg.com/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+      <style type="text/css">/* 轮播边框 */
+.splide {
+    /* 边框颜色和宽度 */
+    border: 2px solid var(--carousel-border-color);
+    /* 阴影 */
+    box-shadow: 0px 4px 8px var(--carousel-shadow-color);
+    /* 圆角 */
+    border-radius: var(--carousel-border-radius);
+}
+
+/* 确保图片的显示与适配 */
+.splide__slide img {
+    width: 100%;
+    height: 100%;
+    /* 确保图片全部显示且占满组件 */
+    object-fit: contain;
+}
+
+.carousel-container {
+    visibility: inherit;
+    /* 调整与上方元素的距离 */
+    margin-top: 20px;
+    /* 调整与下方元素的距离 */
+    margin-bottom: 20px;
+}
+
+/* 图片简介 */
+.carousel-caption {
+    min-height: 2em;
+    /* 设置行高，让文字垂直居中 */
+    line-height: 2em;
+    text-align: center;
+    font-size: 0.9em;
+    font-style: italic;
+    padding: 6px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 左右切换按钮 */
+.splide__arrow {
+    background: transparent;
+    align-items: center;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    height: 5em;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5em;
+    z-index: 10;
+}
+
+/* 禁用状态的切换按钮 */
+.splide__arrow:disabled {
+    opacity: 0;
+}
+
+/* 左右切换按钮的定位 */
+.splide__arrow--prev {
+    left: 0;
+}
+
+.splide__arrow--next {
+    right: 0;
+}
+
+/* 切换按钮中的箭头图标 */
+.splide__arrow svg {
+    /* 动态设置箭头颜色 */
+    fill: var(--carousel-arrow-color);
+    height: 2.5em;
+    transition: fill 0.2s linear;
+    width: 2.5em;
+}
+
+.splide__arrow:hover:not(:disabled) svg {
+    /* 悬停时的箭头颜色 */
+    fill: var(--carousel-arrow-hover-color);
+}
+
+/* 隐藏难看的选中边框 */
+.splide__arrow:focus-visible {
+    outline: transparent;
+    outline-offset: 0;
+}
+
+.splide.is-focus-in .splide__arrow:focus {
+    outline: transparent;
+    outline-offset: 0;
+}
+
+.splide__pagination__page:focus-visible {
+    outline: transparent;
+    outline-offset: 0;
+}
+
+.splide.is-focus-in .splide__pagination__page:focus {
+    outline: transparent;
+    outline-offset: 0;
+}
+
+/* 分页按钮样式 */
+.splide__pagination {
+    bottom: 1em;
+    left: 0;
+    padding: 0 1em;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+
+/* 分页按钮外观 */
+.splide__pagination__page {
+    background: var(--carousel-pagination-color);
+    border: 0;
+    border-radius: 2.5px;
+    display: inline-block;
+    height: 5px;
+    margin: 3px;
+    width: 20px;
+    transition: background-color 0.2s linear;
+}
+
+.splide__pagination__page.is-active {
+    background: var(--carousel-pagination-active-color);
+}
+
+.splide__pagination__page:hover {
+    background: var(--carousel-pagination-hover-color);
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+/* 使用伪元素增加点击区域 */
+.splide__pagination__page::before {
+    content: '';
+    position: absolute;
+    top: -18px;
+    bottom: -18px;
+    left: -4px;
+    right: -4px;
+}
+
+.splide__pagination__page.is-active::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    bottom: -12px;
+    left: -1px;
+    right: -1px;
+}
+
+/* 在放大时按比例缩放，配合 JS 进行调整 */
+.zoomable {
+    /* 缩放时按比例显示 */
+    object-fit: contain;
+}
+
+/* Zooming 时调整图片的最大尺寸，但不影响宽高比例 */
+.zooming {
+    max-width: 90vw !important;
+    max-height: 90vh !important;
+    object-fit: contain !important;
+}</style>
+      <!-- hexo injector head_begin end --><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Catking14"><title>ISC25: Student Cluster Competition · Catbin</title><meta name="description" content="As one of the world’s largest student cluster competiton, the SCC in ISC has been a familiar competition for the NTHU SCC team. With that said, it’s m"><meta name="keywords" content="Blog"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta id="site_data_static" data-url="/"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.jpg"><link rel="stylesheet" href="/js_complied/bundle.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"><script src="/js_complied/bundle.js"></script><script>Anatolo.comment.setConfig({"valine":{"enable":false,"appid":null,"appkey":null,"notify":false,"verify":false,"avatar":"mm","placeholder":"hello, world"},"gitment":{"enable":false,"owner":"Your GitHub ID","repo":"Repo to store comments","client_id":"Your client ID","client_secret":"Your client secret"},"gitalk":{"enable":false,"owner":"Your GitHub ID","repo":"Repo to store comments","client_id":"Your client ID","client_secret":"Your client secret"},"duoshuo":null,"disqus":null,"gentie":null})</script><meta name="generator" content="Hexo 7.3.0"></head><body> <main-outlet><div class="page-top animated"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archives</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/about">About</a></li></div><div class="information"><div class="nav_right_btn"><li class="btn-toggle-more"><i class="fa fa-ellipsis"></i></li><li class="btn-go-back"><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li class="btn-toggle-theme"><a class="far fa-sun" onclick="Anatolo.darkLightToggle();"></a></li></div><div class="avatar"><a href="/about"><img src="/images/avatar.jpg"></a></div></div></div><div class="toc-mobile"><div class="toc-button"><span>Menu</span></div><div class="toc-container in-page animated fadeInDown"><div class="toclist-container"><div class="tocmenu"><ol class="toclist"><li class="toclist-item toclist-level-1"><a class="toclist-link" href="#Background-of-Our-Team"><span class="toclist-text">Background of Our Team</span></a></li><li class="toclist-item toclist-level-1"><a class="toclist-link" href="#Before-the-Competition-Starts"><span class="toclist-text">Before the Competition Starts</span></a></li><li class="toclist-item toclist-level-1"><a class="toclist-link" href="#Running-with-Time"><span class="toclist-text">Running with Time</span></a></li><li class="toclist-item toclist-level-1"><a class="toclist-link" href="#What-They-Achieved"><span class="toclist-text">What They Achieved</span></a></li></ol></div></div></div></div><div class="sidebar animated"><img src="/images/logo.jpg" style="position: absolute; max-width: none; height: max(100%, 80vh); opacity: 0.1; z-index: -1;"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/avatar.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">Catbin</a></h3><div class="description"><p>My cabin on the net</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/Catking14"><i class="fab fa-github"></i></a></li><li><a href="mailto:edarhinos9@gmail.com"><i class="fa fa-envelope"></i></a></li><li><a target="_blank" rel="noopener" href="https://x.com/Catking_14"><i class="fab fa-twitter"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.instagram.com/catking.14/"><i class="fab fa-instagram"></i></a></li><li><a href="www.linkedin.com/in/catking14"><i class="fab fa-linkedin"></i></a></li></ul></div><div class="toc-container in-sidebar animated fadeInDown"><details class="ltr" open><summary>Menu</summary><div class="toclist-container"><div class="tocmenu"><ol class="toclist"><li class="toclist-item toclist-level-1"><a class="toclist-link" href="#Background-of-Our-Team"><span class="toclist-text">Background of Our Team</span></a></li><li class="toclist-item toclist-level-1"><a class="toclist-link" href="#Before-the-Competition-Starts"><span class="toclist-text">Before the Competition Starts</span></a></li><li class="toclist-item toclist-level-1"><a class="toclist-link" href="#Running-with-Time"><span class="toclist-text">Running with Time</span></a></li><li class="toclist-item toclist-level-1"><a class="toclist-link" href="#What-They-Achieved"><span class="toclist-text">What They Achieved</span></a></li></ol></div></div></details></div></div><div class="footer"><div class="p"><span>Copyright © 2025 </span><i class="fa fa-star"></i><span> Catking14</span></div><div class="by_farbox"><span>Powered by</span><a href="https://hexo.io/zh-cn/" target="_blank"> Hexo</a><span> &</span><a href="https://github.com/Lhcfl/hexo-theme-anatolo" target="_blank"> Anatolo</a></div><div class="beian"></div></div></div><div class="main animated fadeInDown"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated"><div class="post-title"><h3><a>ISC25: Student Cluster Competition</a></h3></div><div class="post-content"><p><p><img src="/images/isc25/scc_award.jpg"></p>
+<p>As one of the world’s largest student cluster competiton, the SCC in ISC has been a familiar competition for the NTHU SCC team. With that said, it’s my first time attending this conference, and not as a team member, but a student coach. Similar to previous student cluster competitions, each team will need to run benchmarks, application tasks, and a hidden task under power limit in 3 day competition. This year, the benchmark includes HPL, IO500, and HPCG, while the application tasks are Code Saturne, a computational fluid dynamics (CFD) solver, SeisSol, a wave propagation simulator, Llama 3.1 8B LoRA fine-tuning, and OpenMX, an application for nano-scale material simulations.</p>
+<p>Different from SC, the student cluster competition in ISC is not 24-hour nonstop. We will have 2 extra days to build and test our cluster before the competition, and the competition holds from 9:00 AM to 8:00 PM each day. The competition ends at 1:30 PM last day, which means it actually only has two and a half days. The task each day are already assigned by the committee. First day will start with all benchmarks, followed by Code Saturne, Seissol, and Llama at the second day, and ends with OpenMX and a mystery application, which turned out to be LAMMPS, a well known molecular dynamics simulator.</p>
+<h1 id="Background-of-Our-Team"><a href="#Background-of-Our-Team" class="headerlink" title="Background of Our Team"></a>Background of Our Team</h1><p>Our team composed of all new members. They have no experience about onsite international student cluster competitions. However, their previous performance on HPC-AI online competition and HiPAC national competition are outstanding. This year,  we’ve got member familiar with system and architecture, member good at coding, and other members in different major. Having teamed up over an year ago, they’ve already built strong teamwork through out these days. They might be newcomers, but they are not rookies.</p>
+<p>The competition this year has grown up to 10 teams compare to 7 teams last year. This makes it crucial to choose the hardware, which will eventually become a major key to win. This year, we are grateful to be supported by Gigabyte Technology, who offered us their top-end servers. Our GPU server got 8 H200 with plenty of PCIe U.2 slots. All of our servers are equipped with AMD EPYC processors and over a terabyte of memory. With the aid of Infiniband NDR cables and switch, we have lightning fast inter-connection between nodes. Under the limit of 6000w in total, we decide to bring up a GPU node with two CPU nodes.</p>
+<h1 id="Before-the-Competition-Starts"><a href="#Before-the-Competition-Starts" class="headerlink" title="Before the Competition Starts"></a>Before the Competition Starts</h1><p>Fully prepared team members, top-end hardwares, and our experience from previous competitions, we aim for the highest linpack and first place this year. With that said, things didn’t work well at the very beginning this time. We booked the wrong flight that we landed at Hamburg just after the cluster building session starts, which took us an hour to get to the conference hall. What’s worse, we were blocked outside the hall for almost an hour since we didn’t know where the entrance for competition members was. The conference hadn’t started during cluster building session, which is two days before conference. We found the entrance by asking three different counters at last.</p>
+<p>The cluster building was great. Almost everything works just as expected, though which are not expected works as what they were. We’ve tried to use different network topology without any testing in advance, and it turns out to be a total failure. What truly surprise us is that we didn’t get our rack when we start to build our machine, so every node is just scattering on the floor, with foam from the box under them. It’s really a weird scene to see our cluster just “wide open”. This circumstance almost stay through the entire cluster building session, which we’ve just about to make the decision that whether we are going to just leave them there on the floor. Our rack got to our booth at about 3 hours before the cluster building session ends. After a deep discussion with the unwillingness to move those heavy servers on the rack, our cluster still got its “suit” at the end.</p>
+<p><img src="/images/isc25/DSC_4676.jpg"></p>
+<h1 id="Running-with-Time"><a href="#Running-with-Time" class="headerlink" title="Running with Time"></a>Running with Time</h1><p>The benchmarking at the first day was smooth. We’ve got our first result very quickly, which was before noon (if I remembered correctly). After that, we’ve spent quite a long time trying to tune the HPL and IO500 scores. HPL is straightforward that if you can bring higher watts and more GPUs, you’ll have higher score. Our goal is to lower every other components’ power usage for the GPUs to fully reveal their power. As for IO500, our <code>mdadm</code> encountered some error that we could only make it run with 2 ssds without crash. We’ve only got a reasonable score for these 2 ssds. However, which turned out to be acceptable because no one could beat the first place.</p>
+<p>The application on day two is a little bit frustrating. Our SeisSol spent a large amount of time for trying to run with GPU, and our Llama fine-tuning are far behind other teams, no matter on throughput or accuracy. Our plan for this day had quickly become getting results on every task. OpenMX has been postponed to the last day for unknown reason. Due to that, we’ve gotten our results very fast this day and were able to try some other attempts. It’s a more leisure day compare to yesterday. The third day turns out to be the most challenging. The hidden application is Lammps, a well known simulator which is also the task is ISC21. I thought this would be an easy task for everyone since Lammps is well optimized for GPU and well maintained. The application itself is pretty mature in my understanding. However, we’ve kept failing on running given testcase on GPU, which wasted a lot of time for OpenMX and waiting for CPU simulation to finish. We submit the result literally at the last second of the competition, where our Lammps finish its simulation 2 minutes before that. The errors when using GPU version are totally unexpected and unprecedented. Quite confusing even till now.</p>
+<p><img src="/images/isc25/DSC_4713.jpg"></p>
+<h1 id="What-They-Achieved"><a href="#What-They-Achieved" class="headerlink" title="What They Achieved"></a>What They Achieved</h1><p>Under quite dramatic two and a half days of competition, our team won <strong>the second place</strong> this year! I’m very proud of them that they’ve finished every single task this time, and the outcome of each task is really way better than they expected. With that said, the first place this year, Tsing Hua University, is a huge wall in front of us. They almost got the top score on every tasks with enormous gap between us. Their IO500 has got about 60 times higher than us using their own developed file system <strong>SuperFS</strong>. I’ve seen they modify the MLPerf benchmark for multi-node inference for unsupported StableDiffusion-XL in SC24 last time, but this time, they’ve brought the game to a whole different level. It’s truly challenging to defeat them, and really curious about how they learn and train these team members. No matter what, I’m glad for our team members to have this prize for our team. The competition is never an end, but a beginning to the vast and exciting world of HPC. Cheer for them!</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Glad to be part of this wonderful journey! As a student coach this time, it&#39;s cheerful to see them achieving the greatness once again. Cheer for <a target="_blank" rel="noopener" href="https://twitter.com/NTHUSCC?ref_src=twsrc%5Etfw">@NTHUSCC</a>! <a target="_blank" rel="noopener" href="https://t.co/5xG0dR4oOL">https://t.co/5xG0dR4oOL</a></p>&mdash; Catking (@Catking_14) <a target="_blank" rel="noopener" href="https://twitter.com/Catking_14/status/1942949052171342086?ref_src=twsrc%5Etfw">July 9, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>Read more from:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://isc-hpc.com/program/student-cluster-competition/">ISC25 SCC Official Website</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.facebook.com/nthu.tw/posts/pfbid025ehUJS7qbTAAJxmAKNzFEM2HdHwm3AQPcUpJ1n1a94SaxVrQ3mzN2Q5cbT2J2MV4l">NTHU Official Facebook</a></li>
+<li><a target="_blank" rel="noopener" href="https://x.com/GigaComputing/status/1941096904093266389?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1942949052171342086%7Ctwgr%5Ecfb333486a2e69a1d8a8a816f3537f945977d269%7Ctwcon%5Es3_&ref_url=https://publish.twitter.com/?url=https://twitter.com/Catking_14/status/1942949052171342086">Giga Computing X</a></li>
+</ul>
+</p></div><div class="post-footer"><div class="tip">Please cite the author and source when sharing. Thanks for your support!<br>Author: Catking14</div><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2025-07-31</span><a class="tag" href="/categories/SCC/" title="SCC">SCC </a><i class="fa fa-tag"></i><a class="tag" href="/tags/ISC25/" title="ISC25">ISC25 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/NTHU/" title="NTHU">NTHU </a><span>About 1291 words, 4 min 18 sec  read</span></div></div></div></div><div class="share"><div class="share-btn linkonly"><a class="fa fa-link" onclick="Utils.copyToClipboard(window.location.href)" ref="sidebar"></a></div><div class="share-btn evernote"><a class="fa fa-share" onclick="Anatolo.share.native()" ref="sidebar"></a></div><div class="share-btn facebook"><a class="fab fa-facebook" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://catking14.github.io/2025/07/31/ISC25-Student-Cluster-Competition/"></a></div><div class="share-btn twitter"><a class="fab fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/intent/tweet?text=I%20have%20found%20a%20great%20blog.%0A%0ACatbin%20%C2%B7%20ISC25:%20Student%20Cluster%20Competition%0Ahttps://catking14.github.io/2025/07/31/ISC25-Student-Cluster-Competition/%0A"></a></div><div class="share-btn linkedin"> <a class="fab fa-linkedin" target="_blank" rel="noopener" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://catking14.github.io/2025/07/31/ISC25-Student-Cluster-Competition/&amp;title=ISC25: Student Cluster Competition"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2024/12/28/SC24-Student-Cluster-Competition/" title="SC24 Student Cluster Competition">Next</a></li></ul></div><script>Anatolo.comment.setConfig({"valine":{"enable":false,"appid":null,"appkey":null,"notify":false,"verify":false,"avatar":"mm","placeholder":"hello, world"},"gitment":{"enable":false,"owner":"Your GitHub ID","repo":"Repo to store comments","client_id":"Your client ID","client_secret":"Your client secret"},"gitalk":{"enable":false,"owner":"Your GitHub ID","repo":"Repo to store comments","client_id":"Your client ID","client_secret":"Your client secret"},"duoshuo":null,"disqus":null,"gentie":null})</script></div></div></div></div></main-outlet><button class="float-button hide" id="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" type="button" title="Scroll to top"><i class="fa fa-angle-up"></i></button><div class="modal-cover" id="success-indicator"><div class="modal-container indicator"><i class="fa fa-check"></i></div></div><!-- hexo injector body_end start -->
+      <script src="https://unpkg.com/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+      <script>
+        window.splideStyles = {"arrowColor":"#fc8d5d","arrowHoverColor":"#fc6423","paginationColor":"#fc8d5d","paginationActiveColor":"#fc6423","paginationHoverColor":"#fc6423","borderRadius":"1px","borderColor":{"light":"#eee","dark":"#444"},"shadowColor":{"light":"rgba(0, 0, 0, 0.1)","dark":"rgba(0, 0, 0, 0.3)"}};
+        window.splideDarkMode = 'auto';
+        window.mediumZoomEnabled = false;
+      </script>
+      <script type="text/javascript">// 页面加载事件监听
+document.addEventListener('DOMContentLoaded', function () {
+    splideLoadingHandler();
+    initGlobalMediumZoom();
+});
+
+document.addEventListener('pjax:success', function () {
+    splideLoadingHandler();
+    initGlobalMediumZoom();
+});
+
+// PJAX开启时销毁所有splide实例，不然开启自动播放时图片简介和图片对不上
+document.addEventListener('pjax:send', () => {
+    destroySplideInstances();
+});
+
+window.splideInstances = [];
+function destroySplideInstances() {
+    window.splideInstances.forEach((instance) => {
+        instance.destroy(); // 销毁实例
+    });
+    window.splideInstances = []; // 清空数组
+}
+
+// Splid 加载处理
+function splideLoadingHandler() {
+    // 检查页面是否含有轮播图片
+    const splideEl = document.querySelector('.splide');
+    if (!splideEl) {
+        return; // 如果不存在轮播，则不执行初始化
+    }
+
+    // 检查是否开启Next主题的动画
+    const isMotionEnabled = typeof CONFIG !== 'undefined' && CONFIG && CONFIG.motion && CONFIG.motion.enable;
+    if (isMotionEnabled) {
+        // Motion 开启时延迟加载轮播组件，等待动画完成。把组件加入动画有bug，一直搞不定，只能曲线救国
+        setTimeout(function () {
+            // 初始化轮播组件
+            initSplide();
+        }, 500);  // 延迟 500ms，确保动画完成后再初始化
+    } else {
+        // Motion 关闭时立即初始化
+        initSplide();
+    }
+
+    // 处理 fancybox，默认设置会切换焦点图片造成轮播组件混乱
+    if (typeof Fancybox !== "undefined") {
+        adjustFancybox();
+    }
+
+    // 初始化轮播组件中的 Medium Zoom
+    if (mediumZoomEnabled) {
+        initCarouselMediumZoom();
+    }
+
+    // 应用主题样式
+    applySplideStyle();
+}
+
+// 初始化 Splide
+function initSplide() {
+    const splideElements = document.querySelectorAll('.splide');
+    splideElements.forEach(splideEl => {
+        const options = JSON.parse(splideEl.getAttribute('data-splide'));
+        // 如果轮播组件中只有一张图片，则隐藏箭头
+        const slideCount = splideEl.querySelectorAll('.splide__slide').length;
+        if (slideCount <= 1) {
+            options.arrows = false;
+        }
+        // 简介设置
+        const splide = new Splide(splideEl, options);
+        splide.on('mounted move', function () {
+            const activeSlide = splide.Components.Slides.getAt(splide.index);
+            const caption = activeSlide.slide.dataset.caption;
+            const captionId = splideEl.getAttribute('data-caption-id');
+
+            const captionElement = document.getElementById(captionId);
+            if (captionElement) {
+                captionElement.innerText = caption || '';  // 如果没有简介，设置为空字符串
+            }
+        });
+        splide.mount();
+        window.splideInstances.push(splide); // 将实例存储到数组中   
+    });
+}
+
+// 应用主题明暗样式
+function applySplideStyle() {
+    const applyThemeStyles = (theme, splideStyles) => {
+        const borderColor = theme === 'dark' ? splideStyles.borderColor.dark : splideStyles.borderColor.light;
+        const shadowColor = theme === 'dark' ? splideStyles.shadowColor.dark : splideStyles.shadowColor.light;
+        document.documentElement.style.setProperty('--carousel-border-color', borderColor);
+        document.documentElement.style.setProperty('--carousel-shadow-color', shadowColor);
+        document.documentElement.style.setProperty('--carousel-border-radius', splideStyles.borderRadius);
+        document.documentElement.style.setProperty('--carousel-arrow-color', splideStyles.arrowColor);
+        document.documentElement.style.setProperty('--carousel-arrow-hover-color', splideStyles.arrowHoverColor);
+        document.documentElement.style.setProperty('--carousel-pagination-color', splideStyles.paginationColor);
+        document.documentElement.style.setProperty('--carousel-pagination-active-color', splideStyles.paginationActiveColor);
+        document.documentElement.style.setProperty('--carousel-pagination-hover-color', splideStyles.paginationHoverColor);
+    };
+
+    let theme = 'light';
+    if (window.splideDarkMode === 'auto') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    } else if (window.splideDarkMode === 'true') {
+        theme = 'dark';
+    }
+    applyThemeStyles(theme, window.splideStyles);
+
+    if (window.splideDarkMode === 'auto') {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            applyThemeStyles(e.matches ? 'dark' : 'light', window.splideStyles);
+        });
+    }
+}
+
+// 初始化非轮播图片的 Medium Zoom
+function initGlobalMediumZoom() {
+    // 检查是否启用 medium-zoom
+    if (!mediumZoomEnabled) {
+        return;
+    }
+    const zoomOutsideCarousel = mediumZoom('img:not(.splide .zoomable)', {
+        background: 'rgba(0, 0, 0, 0.8)',
+        margin: 24
+    });
+}
+
+// 初始化轮播组件中的 Medium Zoom
+function initCarouselMediumZoom() {
+    const zoomCarousel = mediumZoom('.zoomable', {
+        background: 'rgba(0, 0, 0, 0.8)',
+        margin: 24,
+        onOpen: (zoom) => {
+            const img = zoom.target; // 获取正在缩放的图片
+            img.classList.add('zooming'); // 添加一个缩放时的 class
+        },
+        onClose: (zoom) => {
+            const img = zoom.target; // 获取缩放的图片
+            img.classList.remove('zooming'); // 移除缩放时的 class
+        }
+    });
+
+    zoomCarousel.on('open', () => {
+        // 隐藏箭头和分页按钮
+        document.querySelectorAll('.splide__arrow, .splide__pagination').forEach(el => {
+            el.style.display = 'none';
+        });
+    });
+
+    zoomCarousel.on('close', () => {
+        // 重新显示箭头和分页按钮
+        document.querySelectorAll('.splide__arrow, .splide__pagination').forEach(el => {
+            el.style.display = '';
+        });
+    });
+}
+
+// fancybox 兼容调整
+function adjustFancybox() {
+    Fancybox.bind("[data-fancybox]", {
+        placeFocusBack: false,  // 禁止 Fancybox 关闭时滚动回页面的焦点位置
+    });
+
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === "childList") {
+                removeFancyboxFromClones();
+            }
+        });
+    });
+
+    // 观察整个文档的 DOM 变化
+    observer.observe(document, { childList: true, subtree: true });
+}
+
+// 移除克隆 Slide 中的 Fancybox 链接
+function removeFancyboxFromClones() {
+    const cloneSlides = document.querySelectorAll('.splide__slide--clone');
+
+    cloneSlides.forEach((slide) => {
+        const fancyboxLink = slide.querySelector('a.fancybox');
+        if (fancyboxLink) {
+            const img = fancyboxLink.querySelector('img');
+            if (img) {
+                // 将 img 挪出 a 标签
+                fancyboxLink.replaceWith(img);
+            }
+        }
+    });
+}</script>      
+    <!-- hexo injector body_end end --></body></html>
