@@ -4,7 +4,7 @@ date: 2024-12-28 13:35:39
 ---
 
 &emsp;
-![](/images/about/me.jpg)
+![](/images/about/DSC_5227.jpg)
 
 ## Tung-Yu Hsieh (謝東豫)
 - Born in 2003, Taoyuan, Taiwan

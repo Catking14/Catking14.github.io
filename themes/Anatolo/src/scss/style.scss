@@ -234,7 +234,7 @@
   position: absolute;
   width: 100%;
   padding-bottom: 5px;
-  background-color: var(--secondary);
+  background-color: transparent;
   transition: background-color 0.8s;
 
   a {
@@ -603,6 +603,26 @@ a.btn {
 
 .in-page.toc-container {
   display: none;
+}
+
+/* Categories list style */
+.category-list {
+  list-style-type: disc;
+  line-height: 3;
+  font-size: 1.4em;
+
+  li.category-list-item {
+    margin: 10px;
+    
+    span.category-list-count {
+      background-color: var(--secondary-900);
+      color: var(--secondary-250);
+      padding: 2px 5px;
+      border-radius: 45%;
+      font-size: 0.8rem;
+      margin-left: 1rem;
+    }
+  }
 }
 
 @media screen and (max-width: $bp-mobile-view) {

@@ -12,6 +12,7 @@
   position: fixed;
   z-index: 4;
   border-right: $site-border;
+  overflow: hidden;
 
   .logo-title {
     text-align: center;

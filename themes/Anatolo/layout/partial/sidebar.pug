@@ -2,6 +2,8 @@ include toc
 +make_toc(false)
 
 .sidebar.animated
+  if theme.sidebar
+    img(src=url_for(theme.sidebar), style='position: absolute; max-width: none; height: max(100%, 80vh); opacity: 0.1; z-index: -1;')
   .sidebar-top
     .logo-title
       .title

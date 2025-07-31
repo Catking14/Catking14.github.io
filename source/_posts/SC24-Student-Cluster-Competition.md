@@ -9,7 +9,7 @@ date: 2024-12-28 22:24:58
 ---
 
 
-![](/images/sc24/SC24-SCC-16.jpg)
+![](/images/sc24/SC24-SCC-16.webp)
 
 What an amazing journey in Georgia, Atlanta! 
 
