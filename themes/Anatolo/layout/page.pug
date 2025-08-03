@@ -13,6 +13,6 @@ block content
     if page.friends
       - var result = JSON.stringify(page.friends);
       meta#FRIENDS_JSON(data=result)
-    +make_post(page, true)
+    +make_post(page, true, true)
     include partial/comments
     +make_comments

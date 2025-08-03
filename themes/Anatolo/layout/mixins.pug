@@ -1,5 +1,10 @@
-mixin make_post(item, is_detail)
-  .post.animated
+mixin make_post(item, is_detail, is_page)
+  - var coverStyle = theme.useSummary && item.coverimg && is_page ? `background: none;` : '';
+  .post.animated(style=coverStyle)
+    //- display cover image only on index page, not in post
+    if theme.useSummary && item.coverimg && is_page
+      .post-cover
+        img(src=url_for(item.coverimg), alt=item.title)
     .post-title
       h3
         if is_detail

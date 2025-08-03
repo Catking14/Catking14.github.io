@@ -12,7 +12,7 @@ block description
 block content
   .autopagerize_page_element: .content: .post-page
     include mixins
-    +make_post(page, true)
+    +make_post(page, true, false)
     .share
       - var twitter_text = encodeURI(__("Share_text") + "\n\n" + config.title + " · " + page.title + "\n" + config.url + "/" + page.path + "\n");
       .share-btn.linkonly

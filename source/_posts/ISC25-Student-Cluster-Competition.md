@@ -1,5 +1,6 @@
 ---
 title: 'ISC25: Student Cluster Competition'
+coverimg: '/images/isc25/scc_award.jpg'
 categories:
   - SCC
 tags:

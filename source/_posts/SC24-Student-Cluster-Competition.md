@@ -1,5 +1,6 @@
 ---
 title: SC24 Student Cluster Competition
+coverimg: '/images/sc24/SC24-SCC-16.webp'
 categories:
   - SCC
 tags:
