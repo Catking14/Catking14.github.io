@@ -9,7 +9,12 @@ npm install pnpm -g
 npm install .
 cd themes/Anatolo && pnpm i
 
+# add a new page in website
+# this uses page scaffold
+hexo new page <name>
+
 # add new blog post as draft
+# this will use draft or page scaffold
 hexo new draft <name> # create new draft post
 hexo publish <name> # publish draft as article
 
