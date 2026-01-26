@@ -1,0 +1,393 @@
+<!DOCTYPE html><html lang="zh-TW" theme="default"><head><!-- hexo injector head_begin start -->
+      <link href="https://unpkg.com/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+      <style type="text/css">/* 轮播边框 */
+.splide {
+    /* 边框颜色和宽度 */
+    border: 2px solid var(--carousel-border-color);
+    /* 阴影 */
+    box-shadow: 0px 4px 8px var(--carousel-shadow-color);
+    /* 圆角 */
+    border-radius: var(--carousel-border-radius);
+}
+
+/* 确保图片的显示与适配 */
+.splide__slide img {
+    width: 100%;
+    height: 100%;
+    /* 确保图片全部显示且占满组件 */
+    object-fit: contain;
+}
+
+.carousel-container {
+    visibility: inherit;
+    /* 调整与上方元素的距离 */
+    margin-top: 20px;
+    /* 调整与下方元素的距离 */
+    margin-bottom: 20px;
+}
+
+/* 图片简介 */
+.carousel-caption {
+    min-height: 2em;
+    /* 设置行高，让文字垂直居中 */
+    line-height: 2em;
+    text-align: center;
+    font-size: 0.9em;
+    font-style: italic;
+    padding: 6px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 左右切换按钮 */
+.splide__arrow {
+    background: transparent;
+    align-items: center;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    height: 5em;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5em;
+    z-index: 10;
+}
+
+/* 禁用状态的切换按钮 */
+.splide__arrow:disabled {
+    opacity: 0;
+}
+
+/* 左右切换按钮的定位 */
+.splide__arrow--prev {
+    left: 0;
+}
+
+.splide__arrow--next {
+    right: 0;
+}
+
+/* 切换按钮中的箭头图标 */
+.splide__arrow svg {
+    /* 动态设置箭头颜色 */
+    fill: var(--carousel-arrow-color);
+    height: 2.5em;
+    transition: fill 0.2s linear;
+    width: 2.5em;
+}
+
+.splide__arrow:hover:not(:disabled) svg {
+    /* 悬停时的箭头颜色 */
+    fill: var(--carousel-arrow-hover-color);
+}
+
+/* 隐藏难看的选中边框 */
+.splide__arrow:focus-visible {
+    outline: transparent;
+    outline-offset: 0;
+}
+
+.splide.is-focus-in .splide__arrow:focus {
+    outline: transparent;
+    outline-offset: 0;
+}
+
+.splide__pagination__page:focus-visible {
+    outline: transparent;
+    outline-offset: 0;
+}
+
+.splide.is-focus-in .splide__pagination__page:focus {
+    outline: transparent;
+    outline-offset: 0;
+}
+
+/* 分页按钮样式 */
+.splide__pagination {
+    bottom: 1em;
+    left: 0;
+    padding: 0 1em;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+
+/* 分页按钮外观 */
+.splide__pagination__page {
+    background: var(--carousel-pagination-color);
+    border: 0;
+    border-radius: 2.5px;
+    display: inline-block;
+    height: 5px;
+    margin: 3px;
+    width: 20px;
+    transition: background-color 0.2s linear;
+}
+
+.splide__pagination__page.is-active {
+    background: var(--carousel-pagination-active-color);
+}
+
+.splide__pagination__page:hover {
+    background: var(--carousel-pagination-hover-color);
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+/* 使用伪元素增加点击区域 */
+.splide__pagination__page::before {
+    content: '';
+    position: absolute;
+    top: -18px;
+    bottom: -18px;
+    left: -4px;
+    right: -4px;
+}
+
+.splide__pagination__page.is-active::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    bottom: -12px;
+    left: -1px;
+    right: -1px;
+}
+
+/* 在放大时按比例缩放，配合 JS 进行调整 */
+.zoomable {
+    /* 缩放时按比例显示 */
+    object-fit: contain;
+}
+
+/* Zooming 时调整图片的最大尺寸，但不影响宽高比例 */
+.zooming {
+    max-width: 90vw !important;
+    max-height: 90vh !important;
+    object-fit: contain !important;
+}</style>
+      <!-- hexo injector head_begin end --><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Catking14"><title>SC25 and Indy Student Cluster Competition · Catbin</title><meta name="description" content="Once again in Supercomputing. 
+This is the first time I’ve been to St. Louis, MO. The city was once the fourth largest in the U.S. and thrived during "><meta name="keywords" content="Blog"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta id="site_data_static" data-url="/"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.jpg"><link rel="stylesheet" href="/js_complied/bundle.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"><script src="/js_complied/bundle.js"></script><script>Anatolo.comment.setConfig({"valine":{"enable":false,"appid":null,"appkey":null,"notify":false,"verify":false,"avatar":"mm","placeholder":"hello, world"},"gitment":{"enable":false,"owner":"Your GitHub ID","repo":"Repo to store comments","client_id":"Your client ID","client_secret":"Your client secret"},"gitalk":{"enable":false,"owner":"Your GitHub ID","repo":"Repo to store comments","client_id":"Your client ID","client_secret":"Your client secret"},"duoshuo":null,"disqus":null,"gentie":null})</script><meta name="generator" content="Hexo 7.3.0"></head><body> <main-outlet><div class="page-top animated"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archives</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/about">About</a></li></div><div class="information"><div class="nav_right_btn"><li class="btn-toggle-more"><i class="fa fa-ellipsis"></i></li><li class="btn-go-back"><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li class="btn-toggle-theme"><a class="far fa-sun" onclick="Anatolo.darkLightToggle();"></a></li></div><div class="avatar"><a href="/about"><img src="/images/avatar.jpg"></a></div></div></div><div class="toc-mobile"><div class="toc-button"><span>Menu</span></div><div class="toc-container in-page animated fadeInDown"><div class="toclist-container"><div class="tocmenu"><ol class="toclist"><li class="toclist-item toclist-level-1"><a class="toclist-link" href="#IndySCC-and-SCC"><span class="toclist-text">IndySCC and SCC</span></a></li><li class="toclist-item toclist-level-1"><a class="toclist-link" href="#Race-with-the-time"><span class="toclist-text">Race with the time?</span></a></li><li class="toclist-item toclist-level-1"><a class="toclist-link" href="#New-Experiences-and-Findings"><span class="toclist-text">New Experiences and Findings</span></a></li></ol></div></div></div></div><div class="sidebar animated"><img class="sidebar-background" src="/images/logo.jpg"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/avatar.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">Catbin</a></h3><div class="description"><p>My cabin on the net</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/Catking14"><i class="fab fa-github"></i></a></li><li><a href="mailto:edarhinos9@gmail.com"><i class="fa fa-envelope"></i></a></li><li><a target="_blank" rel="noopener" href="https://x.com/Catking_14"><i class="fab fa-twitter"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.instagram.com/catking.14/"><i class="fab fa-instagram"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.linkedin.com/in/catking14"><i class="fab fa-linkedin"></i></a></li></ul></div><div class="toc-container in-sidebar animated fadeInDown"><details class="ltr" open><summary>Menu</summary><div class="toclist-container"><div class="tocmenu"><ol class="toclist"><li class="toclist-item toclist-level-1"><a class="toclist-link" href="#IndySCC-and-SCC"><span class="toclist-text">IndySCC and SCC</span></a></li><li class="toclist-item toclist-level-1"><a class="toclist-link" href="#Race-with-the-time"><span class="toclist-text">Race with the time?</span></a></li><li class="toclist-item toclist-level-1"><a class="toclist-link" href="#New-Experiences-and-Findings"><span class="toclist-text">New Experiences and Findings</span></a></li></ol></div></div></details></div></div><div class="footer"><div class="p"><span>Copyright © 2025 </span><i class="fa fa-star"></i><span> Catking14</span></div><div class="by_farbox"><span>Powered by</span><a href="https://hexo.io/zh-cn/" target="_blank"> Hexo</a><span> &</span><a href="https://github.com/Lhcfl/hexo-theme-anatolo" target="_blank"> Anatolo</a></div><div class="beian"></div></div></div><div class="main animated fadeInDown"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated"><div class="post-title"><h3><a>SC25 and Indy Student Cluster Competition</a></h3></div><div class="post-content"><p><p><img src="/images/sc25/DSC_7942-2.jpg"></p>
+<p>Once again in Supercomputing. </p>
+<p>This is the first time I’ve been to St. Louis, MO. The city was once the fourth largest in the U.S. and thrived during the westward expansion. Now it is a slow-paced, tranquil, and comfortable city. The conference this year (2025) takes place at America’s Center, which has a more historical look compared to the convention center in Atlanta last year. Like last year, the convention center is still very large—much bigger than any I’ve seen in Taiwan.</p>
+<p><img src="/images/sc25/home.jpg"></p>
+<h1 id="IndySCC-and-SCC"><a href="#IndySCC-and-SCC" class="headerlink" title="IndySCC and SCC"></a>IndySCC and SCC</h1><p>One of my jobs here is to serve as the coach of Team NTHU for the IndySCC this year. Our team has been a long-time participant in the SCC (Student Cluster Competition) for many years across several countries. The team members this year have already participated in ASC25 held in Qinghai and in several online contests. However, this is my first experience with IndySCC, which is essentially an online version of the traditional SCC at the Supercomputing conference, run without physical machines.</p>
+<p>The main difference with IndySCC is that we don’t have to bring physical machines as teams in the SCC do. Instead, we use the cloud platform provided by the committee. The platform is JetStream2, a large-scale cloud service whose clusters are located in multiple cities across the U.S. The clusters are connected via high-speed internet connections and are managed by various internet providers and educational institutions across the nation. The benefit is that we don’t have to spend a lot of time building a physical cluster and can connect to virtual machine instances via the Internet, which makes it possible to hold the competition online. However, it also means we have less flexibility to tweak hardware and must optimize performance based on the given instances and infrastructure.</p>
+<h1 id="Race-with-the-time"><a href="#Race-with-the-time" class="headerlink" title="Race with the time?"></a>Race with the time?</h1><p>As with the SCC teams, the competition is held for 48 hours. However, IndySCC teams are not allowed to stay overnight at the convention center since we don’t need to stay with physical machines. Originally, I thought this would make the competition friendlier and create more opportunities for team members to look around the conference, attend workshops, tutorials, invited talks, and visit vendor exhibitions. Surprisingly, this year almost all teams spent much of their time at their booths working on tasks. As an SCC attendee last year, I barely saw IndySCC teams stay at their booths for the entire opening hours. This year there were about 10 IndySCC teams, and most of them stayed at their booths for the entire competition. I’m not saying last year’s teams were lazier than this year’s, but they could work more comfortably and remotely from other places than from their booths. </p>
+<p><img src="/images/sc25/DSC_7915-2.jpg"></p>
+<p>As always, our booth inevitably becomes pretty messy :)</p>
+<h1 id="New-Experiences-and-Findings"><a href="#New-Experiences-and-Findings" class="headerlink" title="New Experiences and Findings"></a>New Experiences and Findings</h1><p>Since I didn’t have to spend much time on the competition and was focusing on supporting our team members, I was able to attend workshops and explore exhibitions. Several workshops and paper presentations provided interesting insights into the latest trends and research across various areas. For example, a cybersecurity workshop presented a new GPU vulnerability and demonstrated a possible attack that could break GPU ASLR. Witnessing cutting-edge research and the novel ideas and contributions from these researchers was truly valuable.</p>
+<p>The SC exhibition is one of the largest sessions during the conference. As a student, I enjoyed the lightning talks and vendor promotions. Many vendors showcased their latest solutions, including AI features, storage, cooling solutions, and hardware clusters. Seeing clusters worth over a million dollars displayed in the exhibition hall was quite astonishing.</p>
+<!-- ![](/images/sc25/carrot.jpg)
+![](/images/sc25/cake.jpg)
+![](/images/sc25/scinet.jpg) -->
+
+<div class="gallery">
+    <img src="/images/sc25/carrot.jpg">
+    <img src="/images/sc25/cake.jpg">
+    <img src="/images/sc25/scinet.jpg">
+</div>
+
+<p>Also, this is the first time in my life that I’ve presented a paper at a workshop. I can’t believe it’s happening at SC, even now. Although it’s a symposium-style workshop without official proceedings, it gave me a lot of new experience and I learned many new things. Unfortunately, I didn’t perform well this time. I missed some questions from the attendees and experienced some lags during the presentation. They pointed out areas I need to work on and improve.</p>
+<p>Overall, this was another exciting SC conference for me. Sharing ideas and gaining insights from others’ work is far more interesting than I ever thought. These talented researchers, scientists, engineers, and attendees always bring me new experiences and memories. I hope that one day I can be another great attendee and bring knowledge and insights to others.</p>
+<p><img src="/images/sc25/DSC_7958-2.jpg"></p>
+</p></div><div class="post-footer"><div class="tip">Please cite the author and source when sharing. Thanks for your support!<br>Author: Catking14</div><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2026-01-26</span><a class="tag" href="/categories/SCC/" title="SCC">SCC </a><i class="fa fa-tag"></i><a class="tag" href="/tags/NTHU/" title="NTHU">NTHU </a><i class="fa fa-tag"></i><a class="tag" href="/tags/SC25/" title="SC25">SC25 </a><span>About 775 words, 2 min 35 sec  read</span></div></div></div></div><div class="share"><div class="share-btn linkonly"><a class="fa fa-link" onclick="Utils.copyToClipboard(window.location.href)" ref="sidebar"></a></div><div class="share-btn evernote"><a class="fa fa-share" onclick="Anatolo.share.native()" ref="sidebar"></a></div><div class="share-btn facebook"><a class="fab fa-facebook" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://catking14.github.io/2026/01/26/SC25-and-Indy-Student-Cluster-Competition/"></a></div><div class="share-btn twitter"><a class="fab fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/intent/tweet?text=I%20have%20found%20a%20great%20blog.%0A%0ACatbin%20%C2%B7%20SC25%20and%20Indy%20Student%20Cluster%20Competition%0Ahttps://catking14.github.io/2026/01/26/SC25-and-Indy-Student-Cluster-Competition/%0A"></a></div><div class="share-btn linkedin"> <a class="fab fa-linkedin" target="_blank" rel="noopener" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://catking14.github.io/2026/01/26/SC25-and-Indy-Student-Cluster-Competition/&amp;title=SC25 and Indy Student Cluster Competition"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2025/07/31/ISC25-Student-Cluster-Competition/" title="ISC25: Student Cluster Competition">Next</a></li></ul></div><script>Anatolo.comment.setConfig({"valine":{"enable":false,"appid":null,"appkey":null,"notify":false,"verify":false,"avatar":"mm","placeholder":"hello, world"},"gitment":{"enable":false,"owner":"Your GitHub ID","repo":"Repo to store comments","client_id":"Your client ID","client_secret":"Your client secret"},"gitalk":{"enable":false,"owner":"Your GitHub ID","repo":"Repo to store comments","client_id":"Your client ID","client_secret":"Your client secret"},"duoshuo":null,"disqus":null,"gentie":null})</script></div></div></div></div></main-outlet><button class="float-button hide" id="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" type="button" title="Scroll to top"><i class="fa fa-angle-up"></i></button><div class="modal-cover" id="success-indicator"><div class="modal-container indicator"><i class="fa fa-check"></i></div></div><!-- hexo injector body_end start -->
+      <script src="https://unpkg.com/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+      <script>
+        window.splideStyles = {"arrowColor":"#fc8d5d","arrowHoverColor":"#fc6423","paginationColor":"#fc8d5d","paginationActiveColor":"#fc6423","paginationHoverColor":"#fc6423","borderRadius":"1px","borderColor":{"light":"#eee","dark":"#444"},"shadowColor":{"light":"rgba(0, 0, 0, 0.1)","dark":"rgba(0, 0, 0, 0.3)"}};
+        window.splideDarkMode = 'auto';
+        window.mediumZoomEnabled = false;
+      </script>
+      <script type="text/javascript">// 页面加载事件监听
+document.addEventListener('DOMContentLoaded', function () {
+    splideLoadingHandler();
+    initGlobalMediumZoom();
+});
+
+document.addEventListener('pjax:success', function () {
+    splideLoadingHandler();
+    initGlobalMediumZoom();
+});
+
+// PJAX开启时销毁所有splide实例，不然开启自动播放时图片简介和图片对不上
+document.addEventListener('pjax:send', () => {
+    destroySplideInstances();
+});
+
+window.splideInstances = [];
+function destroySplideInstances() {
+    window.splideInstances.forEach((instance) => {
+        instance.destroy(); // 销毁实例
+    });
+    window.splideInstances = []; // 清空数组
+}
+
+// Splid 加载处理
+function splideLoadingHandler() {
+    // 检查页面是否含有轮播图片
+    const splideEl = document.querySelector('.splide');
+    if (!splideEl) {
+        return; // 如果不存在轮播，则不执行初始化
+    }
+
+    // 检查是否开启Next主题的动画
+    const isMotionEnabled = typeof CONFIG !== 'undefined' && CONFIG && CONFIG.motion && CONFIG.motion.enable;
+    if (isMotionEnabled) {
+        // Motion 开启时延迟加载轮播组件，等待动画完成。把组件加入动画有bug，一直搞不定，只能曲线救国
+        setTimeout(function () {
+            // 初始化轮播组件
+            initSplide();
+        }, 500);  // 延迟 500ms，确保动画完成后再初始化
+    } else {
+        // Motion 关闭时立即初始化
+        initSplide();
+    }
+
+    // 处理 fancybox，默认设置会切换焦点图片造成轮播组件混乱
+    if (typeof Fancybox !== "undefined") {
+        adjustFancybox();
+    }
+
+    // 初始化轮播组件中的 Medium Zoom
+    if (mediumZoomEnabled) {
+        initCarouselMediumZoom();
+    }
+
+    // 应用主题样式
+    applySplideStyle();
+}
+
+// 初始化 Splide
+function initSplide() {
+    const splideElements = document.querySelectorAll('.splide');
+    splideElements.forEach(splideEl => {
+        const options = JSON.parse(splideEl.getAttribute('data-splide'));
+        // 如果轮播组件中只有一张图片，则隐藏箭头
+        const slideCount = splideEl.querySelectorAll('.splide__slide').length;
+        if (slideCount <= 1) {
+            options.arrows = false;
+        }
+        // 简介设置
+        const splide = new Splide(splideEl, options);
+        splide.on('mounted move', function () {
+            const activeSlide = splide.Components.Slides.getAt(splide.index);
+            const caption = activeSlide.slide.dataset.caption;
+            const captionId = splideEl.getAttribute('data-caption-id');
+
+            const captionElement = document.getElementById(captionId);
+            if (captionElement) {
+                captionElement.innerText = caption || '';  // 如果没有简介，设置为空字符串
+            }
+        });
+        splide.mount();
+        window.splideInstances.push(splide); // 将实例存储到数组中   
+    });
+}
+
+// 应用主题明暗样式
+function applySplideStyle() {
+    const applyThemeStyles = (theme, splideStyles) => {
+        const borderColor = theme === 'dark' ? splideStyles.borderColor.dark : splideStyles.borderColor.light;
+        const shadowColor = theme === 'dark' ? splideStyles.shadowColor.dark : splideStyles.shadowColor.light;
+        document.documentElement.style.setProperty('--carousel-border-color', borderColor);
+        document.documentElement.style.setProperty('--carousel-shadow-color', shadowColor);
+        document.documentElement.style.setProperty('--carousel-border-radius', splideStyles.borderRadius);
+        document.documentElement.style.setProperty('--carousel-arrow-color', splideStyles.arrowColor);
+        document.documentElement.style.setProperty('--carousel-arrow-hover-color', splideStyles.arrowHoverColor);
+        document.documentElement.style.setProperty('--carousel-pagination-color', splideStyles.paginationColor);
+        document.documentElement.style.setProperty('--carousel-pagination-active-color', splideStyles.paginationActiveColor);
+        document.documentElement.style.setProperty('--carousel-pagination-hover-color', splideStyles.paginationHoverColor);
+    };
+
+    let theme = 'light';
+    if (window.splideDarkMode === 'auto') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    } else if (window.splideDarkMode === 'true') {
+        theme = 'dark';
+    }
+    applyThemeStyles(theme, window.splideStyles);
+
+    if (window.splideDarkMode === 'auto') {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            applyThemeStyles(e.matches ? 'dark' : 'light', window.splideStyles);
+        });
+    }
+}
+
+// 初始化非轮播图片的 Medium Zoom
+function initGlobalMediumZoom() {
+    // 检查是否启用 medium-zoom
+    if (!mediumZoomEnabled) {
+        return;
+    }
+    const zoomOutsideCarousel = mediumZoom('img:not(.splide .zoomable)', {
+        background: 'rgba(0, 0, 0, 0.8)',
+        margin: 24
+    });
+}
+
+// 初始化轮播组件中的 Medium Zoom
+function initCarouselMediumZoom() {
+    const zoomCarousel = mediumZoom('.zoomable', {
+        background: 'rgba(0, 0, 0, 0.8)',
+        margin: 24,
+        onOpen: (zoom) => {
+            const img = zoom.target; // 获取正在缩放的图片
+            img.classList.add('zooming'); // 添加一个缩放时的 class
+        },
+        onClose: (zoom) => {
+            const img = zoom.target; // 获取缩放的图片
+            img.classList.remove('zooming'); // 移除缩放时的 class
+        }
+    });
+
+    zoomCarousel.on('open', () => {
+        // 隐藏箭头和分页按钮
+        document.querySelectorAll('.splide__arrow, .splide__pagination').forEach(el => {
+            el.style.display = 'none';
+        });
+    });
+
+    zoomCarousel.on('close', () => {
+        // 重新显示箭头和分页按钮
+        document.querySelectorAll('.splide__arrow, .splide__pagination').forEach(el => {
+            el.style.display = '';
+        });
+    });
+}
+
+// fancybox 兼容调整
+function adjustFancybox() {
+    Fancybox.bind("[data-fancybox]", {
+        placeFocusBack: false,  // 禁止 Fancybox 关闭时滚动回页面的焦点位置
+    });
+
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === "childList") {
+                removeFancyboxFromClones();
+            }
+        });
+    });
+
+    // 观察整个文档的 DOM 变化
+    observer.observe(document, { childList: true, subtree: true });
+}
+
+// 移除克隆 Slide 中的 Fancybox 链接
+function removeFancyboxFromClones() {
+    const cloneSlides = document.querySelectorAll('.splide__slide--clone');
+
+    cloneSlides.forEach((slide) => {
+        const fancyboxLink = slide.querySelector('a.fancybox');
+        if (fancyboxLink) {
+            const img = fancyboxLink.querySelector('img');
+            if (img) {
+                // 将 img 挪出 a 标签
+                fancyboxLink.replaceWith(img);
+            }
+        }
+    });
+}</script>      
+    <!-- hexo injector body_end end --></body></html>
