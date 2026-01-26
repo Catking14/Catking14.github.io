@@ -28,3 +28,20 @@ hexo deploy
 ```
 
 Currently, `deploy` command will create a commit to `gh-pages` branch, and github will use branch `gh-pages` to build website. This is a static website.
+
+### Markdown Special Display Section
+
+**Horizontal Gallery**
+
+In markdown, use the following code block as template:
+
+```
+<div class="gallery">
+    <img src="...">
+    <img src="...">
+    <img src="...">
+    ...
+</div>
+```
+
+Then you will have a horizontal gallery bar in the page. Overflow will be handles via scrolling horizontally.

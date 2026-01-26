@@ -122,6 +122,40 @@
       color: var(--secondary-350);
       font-size: 15px;
     }
+
+    .gallery {
+      display: flex;
+      justify-content: safe center;
+      height: 40vh;
+      overflow-y: hidden;
+      overflow-x: auto;
+      gap: 30px; // Even space between images
+      align-items: center; // Center images vertically if aspect ratios differ slightly
+
+      img {
+        height: 100%; // Fill the container height
+        width: auto; // Maintain aspect ratio
+        object-fit: cover; // Ensure images cover the area without distortion if needed
+        border-radius: 4px; // Optional: adds a slight rounded corner
+        flex-shrink: 0; // Prevent images from shrinking to fit
+      }
+
+      // Custom scrollbar styling
+      &::-webkit-scrollbar {
+        height: 12px; /* Height of horizontal scrollbar */
+        background-color: transparent; /* Transparent background */
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--secondary-350); /* Darker thumb with transparency */
+        border-radius: 20px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: var(--secondary-850); /* Transparent track */
+        border-radius: 4px;
+      }
+    }
   }
 
   .post-footer {
