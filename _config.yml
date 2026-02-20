@@ -61,12 +61,12 @@ prismjs:
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 # index2 generator是否包含官方的hexo-generator-index，默认true（包含）
-index2_include_index: true
+index2_include_index: false
 
 # index 2 generator settings
 ## https://github.com/Jamling/hexo-generator-index2/blob/master/README_zh.md
 index2_generator:
-  path: ''
+  path: 'posts'
   index: true
   per_page: 10
   order_by: -date

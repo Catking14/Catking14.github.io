@@ -58,6 +58,7 @@ social:
 # Nav menu
 menu:
   Home: /
+  Posts: /posts
   Archives: /archives
   Categories: /categories
   Tags: /tags

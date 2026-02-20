@@ -21,8 +21,13 @@ date: 2024-12-28 13:35:39
     - Interactive Entertainment
     - Baseball
 
-## Works and Publications
+## Publication and Presentation
 
 - **"Performance Analysis of Compute Express Link (CXL) Memory Expansion with Data Interleaving"**, in *6th Workshop on Heterogeneity and Memory Systems (HMEM 2025) conjunction with SC'25, St. Louis, MO*.
 
 - (<font color="#f33">2025 NSTC College Student Research Creativity Award</font>) **"Performance Benchmark and Application Building based on Current Developing CXL technology"**, in *College Student Research Program, National Science and Technology Council*. Available at [NSTC website](https://wsts.nstc.gov.tw/STSWeb/Award/AwardMultiQuery.aspx?year=113&code=QS05&name=%E8%AC%9D%E6%9D%B1%E8%B1%AB).
+
+## Work Experience
+
+- **Parttime Research Assistant** @ National Center for High-performance Computing, Taiwan. *07/2024 ~ 07/2025*
+    - Support AI agent design and prototype implementation

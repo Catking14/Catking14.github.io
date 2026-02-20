@@ -1,0 +1,30 @@
+extends partial/layout
+
+block site_title
+  = config.title
+
+block description
+  meta(name="description", content=theme.description ? theme.description : config.description)
+
+block content
+  .autopagerize_page_element: .content
+    include mixins
+    //- Intro section: renders the page content from source/index.md
+    .post.animated
+      .post-content
+        != page.content
+
+    //- Recent Posts section
+    .post.animated
+      .home-title
+        h1= __('recent_posts')
+
+    - var recentPosts = site.posts.sort('date', -1).toArray().slice(0, 3)
+    each item in recentPosts
+      +make_post(item, false, true)
+
+    //- Link to full post list
+    .pagination
+      ul.clearfix
+        li.next.pagbuttons
+          a.btn(role="navigation", href=url_for('/posts'))= __('view_all')
